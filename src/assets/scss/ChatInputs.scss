@@ -1,0 +1,29 @@
+@import "variables";
+
+#chat-inputs {
+  background: #ffffff;
+  height: 75px;
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+
+  input {
+    background: #f7f7f7;
+    border: none;
+    padding: 20px;
+    margin: 0 10px;
+
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  .svg-inline--fa {
+    font-size: 22px;
+    margin: -1px 7px;
+    color: $accent-color;
+    cursor: pointer;
+  }
+}

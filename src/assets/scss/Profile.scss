@@ -1,0 +1,75 @@
+@import "variables";
+
+#profile-window {
+  background: #f2f2f2;
+  padding-bottom: 75px;
+  overflow: hidden;
+
+  header {
+    background: #fff;
+
+    span {
+      margin: 0 10px;
+      cursor: pointer;
+
+
+      i {
+        margin: 5px
+      }
+
+      &:hover * {
+        color: $accent-color;
+
+      }
+    }
+  }
+
+  #profile-card {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+
+
+  }
+
+
+  #search-result {
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    border-top: 1px solid #ccc;
+  }
+
+  .profile-photo{
+    width: 8rem;
+    height:8rem;
+    border-radius:10px;
+    position: relative;
+    top: -60px;
+    box-shadow: 10px 10px 14px #6464647F;
+    opacity: 1;
+  }
+  .editPropile-photo{
+    cursor: pointer;
+  }
+  .profile-name{
+    
+      margin-top: -30px ;
+    }
+  .highlight{color:red}
+  .edit-btn{
+    color: #9E9E9E;
+    position: absolute;
+    top: 205px;
+    right: 7px;
+    height: 20px;
+    width: 20px;
+  }
+  .btn{
+    border-radius: 20px;
+  }
+
+}
+

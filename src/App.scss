@@ -1,0 +1,130 @@
+@import "assets/scss/variables";
+
+.flex {
+  display: flex
+}
+
+.vh-100 {
+  height: 100vh
+}
+
+.padding-0 {
+  padding: 0 !important;
+}
+
+.padding-10 {
+  padding: 10px !important;
+}
+
+.padding-15 {
+  padding: 15px !important;
+}
+
+.padding-20 {
+  padding: 20px !important;
+}
+
+.padding-30 {
+  padding: 30px !important;
+}
+
+.padding-lr-10 {
+  padding-left: 10px;
+  padding-right: 10px
+}
+
+.padding-lr-15 {
+  padding-left: 15px;
+  padding-right: 15px
+}
+
+.margin-0 {
+  margin: 0 !important;
+}
+
+.margin-10 {
+  margin: 10px !important;
+}
+
+.margin-15 {
+  margin: 15px !important;
+}
+
+.margin-20 {
+  margin: 20px !important;
+}
+
+.margin-30 {
+  margin: 30px !important;
+}
+
+
+.margin-lr-10 {
+  margin-right: 10px;
+  margin-left: 10px
+}
+
+.margin-tb-2 {
+  margin-top: 2px;
+  margin-bottom: 2px
+}
+.margin-tb-5 {
+  margin-top: 5px;
+  margin-bottom: 5px
+}
+.margin-top60{
+     margin-top: -60px ;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.cursor-pointer {
+  cursor: pointer
+}
+
+.cursor-arrow {
+  cursor: default
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.shadow {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.36);
+}
+
+.accent-color {
+  color: $accent-color;
+}
+
+.accent-btn {
+  background-color: $accent-color !important;
+  border-color: $accent-color !important;
+}
+
+
+.content-wrapper {
+  padding: 0 !important;
+  background: #d3dbdb;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.user-avatar {
+  background: green;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  color: #fff;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-right: 15px;
+}

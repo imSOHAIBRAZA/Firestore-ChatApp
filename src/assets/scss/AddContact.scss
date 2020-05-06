@@ -1,0 +1,85 @@
+@import "variables";
+
+#contact-window {
+  background: #f2f2f2;
+  padding-bottom: 75px;
+  overflow: hidden;
+
+  header {
+    background: #fff;
+
+    span {
+      margin: 0 10px;
+      cursor: pointer;
+
+
+      i {
+        margin: 5px
+      }
+
+      &:hover * {
+        color: $accent-color;
+
+      }
+    }
+  }
+
+  #add-contact {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  form {
+    height: 100%;
+    padding-bottom: 20px;
+  }
+
+  .form-control {
+    height: 45px;
+    background: none;
+    border: none;
+
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+
+  .input-group-text {
+    background: none;
+    border: none;
+    padding-right: 0;
+  }
+
+  .list-group-item {
+    cursor: pointer;
+    display: flex !important;
+    justify-content: space-between;
+
+    button {
+      display: none
+    }
+
+    &:hover {
+      background: #cccccc;
+
+      button {
+        display: block
+      }
+    }
+  }
+
+  #search-result {
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    border-top: 1px solid #ccc;
+  }
+}

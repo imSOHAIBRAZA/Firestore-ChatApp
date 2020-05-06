@@ -1,0 +1,46 @@
+.user-info {
+  border-bottom: 1px solid #cccccc73;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-left: 8px solid #fff;
+
+  .user-name {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .user-excerpt {
+    margin: 0;
+  }
+
+  .user-avatar {
+    background: green;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+  }
+
+  .date {
+    background: #cccccc;
+    border-radius: 4px;
+    padding: 2px 5px;
+  }
+
+  .user-chat-info {
+    padding-top: 20px;
+  }
+
+  &:hover, &.active {
+    border-left: 8px solid green;
+    background: #cccccc59;
+
+  }
+
+
+}

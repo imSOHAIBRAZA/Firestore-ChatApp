@@ -1,0 +1,33 @@
+.chat-bubble-wrapper {
+  position: relative;
+
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+  }
+
+  .chat-bubble {
+    background: #ffffff;
+    max-width: 40%;
+    margin: 10px;
+    padding: 10px 25px;
+    border-radius: 10px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) !important;
+
+    svg {
+      width: 50px
+    }
+
+    .img a {
+      width: 240px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  img {
+    width: 240px;
+  }
+
+}

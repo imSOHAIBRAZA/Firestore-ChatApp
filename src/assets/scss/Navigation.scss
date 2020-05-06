@@ -1,0 +1,44 @@
+@import "variables";
+
+#navigation {
+  background: $accent-color;
+  .btn-transparent {
+    &:active,
+    &:focus {
+      outline: none !important;
+      box-shadow: none;
+    }
+    &::after {
+      content: none;
+    }
+  }
+  .nav-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+    color: #cccccc;
+    cursor: pointer;
+
+    i {
+      color: #cccccc;
+    }
+
+    small {
+      visibility: hidden;
+    }
+
+    &:hover,
+    &.active {
+      color: #ffffff;
+
+      small {
+        visibility: visible;
+      }
+
+      i {
+        color: #ffffff;
+      }
+    }
+  }
+}

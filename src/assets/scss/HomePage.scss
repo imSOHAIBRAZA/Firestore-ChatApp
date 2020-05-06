@@ -1,0 +1,24 @@
+.main-wrapper {
+  width: 100%;
+  max-width: 100% !important;
+  padding: 0 !important;
+
+
+  #chat-window-wrapper {
+    background: #fff;
+    height: 100vh;
+  }
+
+
+  @media screen and (min-width: 1441px) {
+    width: 1366px !important;
+    max-width: none !important;
+    #chat-window-wrapper {
+      background: #fff;
+      height: 80vh;
+    }
+  }
+
+
+}
+

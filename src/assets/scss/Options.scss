@@ -1,0 +1,49 @@
+@import "variables";
+
+#options {
+  height: 100%;
+
+  .user-avatar {
+    height: 100px;
+    width: 100px;
+    margin-right: 0;
+    margin-bottom: 15px;
+
+  }
+
+  .custom-switch .custom-control-label::before {
+
+    box-shadow: none !important;
+  }
+
+  .nav-tabs {
+    margin-top: -25px;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #888;
+
+    .nav-item {
+      border: 0;
+      border-bottom: 3px solid #fff;
+      box-shadow: none !important;
+      margin-bottom: 0;
+      color: #000;
+
+      &:hover {
+
+        border-bottom: 3px solid $accent-color;
+        text-decoration: none;
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid #888;
+        text-decoration: none;
+      }
+
+      &.active {
+
+        border-bottom: 3px solid $accent-color;
+      }
+    }
+  }
+}
