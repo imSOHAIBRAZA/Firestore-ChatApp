@@ -1,5 +1,6 @@
 import {combineReducers} from "redux";
 import authReducer from "./authReducer";
+import profileReducer from "./profileReducer";
 import chatReducer from "./chatReducer";
 import threadReducer from "./threadReducer";
 import navReducer from "./navigationReducer";
@@ -13,6 +14,7 @@ const authPersistConfig = {
 };
 const rootReducer = combineReducers({
     auth: persistReducer(authPersistConfig, authReducer),
+    profile:profileReducer,
     chats: chatReducer,
     thread: threadReducer,
     nav: navReducer

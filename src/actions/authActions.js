@@ -100,6 +100,7 @@ export function logoutUser() {
       .signOut()
       .then(function() {
         dispatch({ type: LOGOUT_SUCCESS });
+        localStorage.clear();
         return true;
       })
       .catch(function(e) {
