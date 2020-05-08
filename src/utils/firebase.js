@@ -19,7 +19,7 @@ const fire = firebase.initializeApp(firebaseConfig);
 
 export const firestore = firebase.firestore();
 export const storage = firebase.storage().ref();
-export const messaging = firebase.messaging();
+export  const messaging = firebase.messaging();
 
 
 export default fire;
