@@ -1,68 +1,47 @@
 import fire, { firestore as db } from "../utils/firebase";
-import {
-  REGISTRATION_PENDING,
-  REGISTRATION_SUCCESS,
-  REGISTRATION_FAILED,
-  LOGIN_PENDING,
-  LOGIN_SUCCESS,
-  LOGIN_FAILED,
-  ADD_CONTACT,
-  LOGOUT_PENDING,
-  LOGOUT_SUCCESS,
-  LOGOUT_FAILED
-} from "../types/types";
-import firebase from "firebase/app";
+import { SHOW_USER_PROFILE, UPDATE_USER_PROFILE } from "../types/types";
+
 
 
 //SET_USER_DATA
 export const setProfile = (data) => ({
-    type: 'SHOW_USER_PROFILE',
-    data
+  type: SHOW_USER_PROFILE,
+  data
 
 });
 
 // START_SET_USER_DATA
 export const getUserProfile = () => {
-    return (dispatch,getState) => {
-        const uid = getState().auth.uid;
-        
-       return db.collection("users").doc(uid).get().then(value => {
-       let userData=value.data();
-            dispatch(setProfile(userData));
-            
-          });
-    }
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+
+    return db.collection("users").doc(uid).get().then(value => {
+      let userData = value.data();
+      dispatch(setProfile(userData));
+    });
+  }
 }
-  
 
-// export function getUserProfile(data) {
-//   const { email, password } = data;
-//   return dispatch => {
-//     dispatch({ type: LOGIN_PENDING });
+//UPDATE_USER_DATA
+export const updateProfile = (data) => ({
+  type: UPDATE_USER_PROFILE,
+  data
 
-//     return fire
-//       .auth()
-//       .signInWithEmailAndPassword(email, password)
-//       .then(res => {
-//         if (res.user.emailVerified) {
+});
 
-//           db.collection("users").doc(res.user.uid).get().then(value => {
-//             // debugger;
-//             dispatch({type: LOGIN_SUCCESS, payload: value.data()});
-            
-//           });
+// UPDATE_USER_DATA
+export const getUpdateProfile = (data) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
 
-//           console.log("login successful");
-//           return true;
-//         } else {
-//           throw new Error("Email address is not verified");
-//         }
-//       })
-//       .catch(e => {
-//         dispatch({ type: LOGIN_FAILED, payload: e.message });
-//       });
-//   };
-// }
-
-
-
+    var userRef = db.collection("users").doc(uid);
+    return userRef.update(data)
+      .then(function () {
+        console.log("Document successfully updated!");
+        dispatch(updateProfile(data));
+      })
+      .catch(function (error) {
+        console.error("Error updating document: ", error);
+      });
+  }
+}

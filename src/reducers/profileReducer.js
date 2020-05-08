@@ -1,4 +1,4 @@
-import {ACTIVE_CHAT, ADD_CHATS, CLEAR_ALL_CHATS, REMOVE_CHATS} from "../types/types";
+import {UPDATE_USER_PROFILE,SHOW_USER_PROFILE} from "../types/types";
 
 const INITIAL_STATE = {
 
@@ -11,17 +11,14 @@ const profileReducer = (state = INITIAL_STATE, action) => {
     
     switch (action.type) {
 
-        case 'SHOW_USER_PROFILE': {
-            // debugger;
-            // return {...state, userData: [...state.userData, action.data]};
+        case SHOW_USER_PROFILE: {
             return {...state, userData: action.data};
 
         }
         
-
-        // case UPDATE_USER_PROFILE: {
-        //     return {...state, ...action.updates)}
-        // }
+         case UPDATE_USER_PROFILE: {
+            return {...state, userData: action.data}
+        }
 
         default: {
             return state;
