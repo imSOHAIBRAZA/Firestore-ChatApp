@@ -28,7 +28,7 @@ const { profile } = useSelector(({ profile }) => ({
 
 
   const editData = () => {
-    setEditToggle(true)
+    setEditToggle(!editToggle)
   }
 
   return (
@@ -40,13 +40,11 @@ const { profile } = useSelector(({ profile }) => ({
       </header>
       <section id="profile-card">
         <section className="padding-15 h-50  w-50">
-
           <Card style={{ width: '20rem' }} className="align-items-center text-center">
             <Card.Img variant="top" src={profilecover} />
             <Card.Body>
-
               {
-                editToggle ? <EditProfile Userdata={profile.userData}/> : <ShowProfile isEdit={editData} Userdata={profile.userData} />
+                editToggle ? <EditProfile isEdit={editData} Userdata={profile.userData}/> : <ShowProfile isEdit={editData} Userdata={profile.userData} />
               }
             </Card.Body>
           </Card>
@@ -54,8 +52,6 @@ const { profile } = useSelector(({ profile }) => ({
 
         </section>
       </section>
-
-
     </div>
   );
 }

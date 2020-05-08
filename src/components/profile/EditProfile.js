@@ -8,15 +8,20 @@ import { getItem } from "../../utils/localStorage";
 import {getUserProfile} from "../../actions/profileAction";
 
 
-const EditProfile = ({Userdata}) => {
+const EditProfile = ({isEdit,Userdata}) => {
 
   //** GET STATE & DISPATCH WITH STORE **//
   const dispatch = useDispatch();
   const { Auth } = useSelector(({ auth }) => ({
     Auth: auth,
 }));
-
-  const [data, setData] = useState({ name: undefined, bio: undefined, dob: undefined, gender: undefined });
+    const {name:userName, bio:userBio,dob:userDob,gender:userGender,imagePath:imageUrl}=Userdata
+  const [data, setData] = useState({ name: Userdata?userName:'', 
+                                      bio: Userdata?userBio:'', 
+                                      dob: Userdata?userDob:'', 
+                                      gender: Userdata?userGender:'',
+                                      imagePath:Userdata?imageUrl:''
+                                    });
   
   const [image, setImage] = useState({ preview: "", file: "" });
 
@@ -65,6 +70,7 @@ if (e.target.files.length) {
         return userRef.update({...data,imagePath:value})
           .then(function () {
         console.log("Document successfully updated!");
+        isEdit();
       })
       .catch(function (error) {
         // The document probably doesn't exist.
@@ -74,16 +80,18 @@ if (e.target.files.length) {
   });
 
  };
-     const{name, bio, dob, gender,imagePath} = Userdata;
+     const{name, bio, dob, gender} = data;
 
   return (
     <>
       <label htmlFor="upload-button">
         {image.preview ? (
-          <img src={image.preview} className="profile-photo editPropile-photo" alt="dummy" />
+          <img src={image.preview} className="profile-photo editPropile-photo" alt="Profile Image" />
         ) : (
             <>
-              <img src={imagePath} alt="dummy" className="profile-photo editPropile-photo" />
+            {imageUrl ? <img src={imageUrl} alt="Profile Image" className="profile-photo editPropile-photo" />:
+             <img src={profile} alt="Profile Image" className="profile-photo editPropile-photo" />
+            }
             </>
           )}
       </label>
@@ -115,7 +123,7 @@ if (e.target.files.length) {
         </Form.Row>
         <Form.Row className="margin-tb-5" >
           <Col>
-            <Button variant="outline-dark" block className="btn">Cancel</Button>
+            <Button variant="outline-dark" block className="btn" onClick={isEdit}>Cancel</Button>
           </Col>
           <Col>
             <Button variant="dark" block className="btn" onClick={updateProfile}>Save</Button>
