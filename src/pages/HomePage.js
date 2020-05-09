@@ -9,6 +9,7 @@ import AddContact from "../components/contacts/AddContact";
 import Notification from "../components/notification/Notification";
 import Profile from "../components/profile/Profile";
 import {askForPermissioToReceiveNotifications} from "../services/push-notification";
+import {messaging} from "../utils/firebase";
 
 
 import {CHAT} from "../types/nav";
@@ -18,7 +19,8 @@ class HomePage extends Component {
     componentDidMount() {
         console.log(this.props.uid)
         askForPermissioToReceiveNotifications()
-        }
+       
+    }
 
      
 

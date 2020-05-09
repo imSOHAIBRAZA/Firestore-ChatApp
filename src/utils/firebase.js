@@ -21,5 +21,8 @@ export const firestore = firebase.firestore();
 export const storage = firebase.storage().ref();
 export  const messaging = firebase.messaging();
 
+// messaging.onMessage(function (payload) {
+//   console.log('ON_MESSAGE',payload)
+// })
 
 export default fire;

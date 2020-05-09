@@ -1,0 +1,753 @@
+[debug] [2020-05-09T13:35:25.875Z] ----------------------------------------------------------------------
+[debug] [2020-05-09T13:35:25.880Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2020-05-09T13:35:25.881Z] CLI Version:   8.2.0
+[debug] [2020-05-09T13:35:25.881Z] Platform:      win32
+[debug] [2020-05-09T13:35:25.881Z] Node Version:  v12.16.2
+[debug] [2020-05-09T13:35:25.882Z] Time:          Sat May 09 2020 17:35:25 GMT+0400 (Gulf Standard Time)
+[debug] [2020-05-09T13:35:25.883Z] ----------------------------------------------------------------------
+[debug] [2020-05-09T13:35:25.883Z] 
+[debug] [2020-05-09T13:35:25.904Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-09T13:35:25.905Z] > authorizing via signed-in user
+[debug] [2020-05-09T13:35:25.906Z] [iam] checking project refferor-79247 for permissions ["firebase.projects.get"]
+[debug] [2020-05-09T13:35:25.912Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-05-09T13:35:25.913Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-05-09T13:35:26.473Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 09 May 2020 12:36:01 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-09T13:35:26.488Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/refferor-79247:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-05-09T13:35:28.784Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 09 May 2020 12:36:03 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1427","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-09T13:35:28.786Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/refferor-79247  
+ 
+[debug] [2020-05-09T13:35:29.573Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 09 May 2020 12:36:04 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: functions emulator started at http://localhost:5000
+[info] i  functions: Watching "D:\Refferor\referror\functions" for Cloud Functions...
+[debug] [2020-05-09T13:35:30.643Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:35:30.644Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:35:30.644Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:35:30.645Z] [worker-~diagnostic~-b8e87047-ac71-401a-aef7-a7c1e4388fec]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\13692 
+[debug] [2020-05-09T13:35:30.646Z] [worker-~diagnostic~-b8e87047-ac71-401a-aef7-a7c1e4388fec]: BUSY 
+[debug] [2020-05-09T13:35:31.767Z] [runtime-status] [13692] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:35:31.775Z] [runtime-status] [13692] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:35:31.789Z] [runtime-status] [13692] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:35:31.793Z] [runtime-status] [13692] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:35:31.798Z] [runtime-status] [13692] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:35:31.920Z] [runtime-status] [13692] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:35:31.922Z] [runtime-status] [13692] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:35:31.925Z] [runtime-status] [13692] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:35:31.927Z] [runtime-status] [13692] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:35:31.928Z] [runtime-status] [13692] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:35:32.086Z] [worker-~diagnostic~-b8e87047-ac71-401a-aef7-a7c1e4388fec]: exited 
+[debug] [2020-05-09T13:35:32.087Z] [worker-~diagnostic~-b8e87047-ac71-401a-aef7-a7c1e4388fec]: FINISHED 
+[debug] [2020-05-09T13:35:59.596Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:36:00.599Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:36:00.609Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:36:00.609Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:36:00.609Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:36:00.610Z] [worker-~diagnostic~-93dfb8c6-b07d-43e4-ac7a-d14a25a73af9]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\1172 
+[debug] [2020-05-09T13:36:00.610Z] [worker-~diagnostic~-93dfb8c6-b07d-43e4-ac7a-d14a25a73af9]: BUSY 
+[debug] [2020-05-09T13:36:01.447Z] [runtime-status] [1172] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:36:01.455Z] [runtime-status] [1172] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:36:01.467Z] [runtime-status] [1172] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:01.469Z] [runtime-status] [1172] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:01.472Z] [runtime-status] [1172] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:36:01.528Z] [runtime-status] [1172] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:36:01.530Z] [runtime-status] [1172] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:01.531Z] [runtime-status] [1172] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:01.532Z] [runtime-status] [1172] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:01.532Z] [runtime-status] [1172] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:11
+        privateKey": "refferor-79247@appspot.gserviceaccount.com",
+                  ^^^^
+
+SyntaxError: Unexpected string
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:36:01.562Z] [worker-~diagnostic~-93dfb8c6-b07d-43e4-ac7a-d14a25a73af9]: exited 
+[debug] [2020-05-09T13:36:01.562Z] [worker-~diagnostic~-93dfb8c6-b07d-43e4-ac7a-d14a25a73af9]: FINISHED 
+[debug] [2020-05-09T13:36:02.133Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:36:03.133Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:36:03.145Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:36:03.146Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:36:03.147Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:36:03.148Z] [worker-~diagnostic~-f9052ad0-07f9-4bdc-8310-e582d764e0d9]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\3648 
+[debug] [2020-05-09T13:36:03.149Z] [worker-~diagnostic~-f9052ad0-07f9-4bdc-8310-e582d764e0d9]: BUSY 
+[debug] [2020-05-09T13:36:04.043Z] [runtime-status] [3648] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:36:04.051Z] [runtime-status] [3648] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:36:04.061Z] [runtime-status] [3648] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:04.064Z] [runtime-status] [3648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:04.066Z] [runtime-status] [3648] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:36:04.141Z] [runtime-status] [3648] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:36:04.142Z] [runtime-status] [3648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:04.144Z] [runtime-status] [3648] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:04.145Z] [runtime-status] [3648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:04.146Z] [runtime-status] [3648] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:36:04.261Z] [worker-~diagnostic~-f9052ad0-07f9-4bdc-8310-e582d764e0d9]: exited 
+[debug] [2020-05-09T13:36:04.261Z] [worker-~diagnostic~-f9052ad0-07f9-4bdc-8310-e582d764e0d9]: FINISHED 
+[debug] [2020-05-09T13:36:05.541Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:36:06.543Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:36:06.550Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:36:06.550Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:36:06.550Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:36:06.551Z] [worker-~diagnostic~-e2be75c2-750c-47f6-8c74-e568babb4a9d]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\4256 
+[debug] [2020-05-09T13:36:06.551Z] [worker-~diagnostic~-e2be75c2-750c-47f6-8c74-e568babb4a9d]: BUSY 
+[debug] [2020-05-09T13:36:07.241Z] [runtime-status] [4256] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:36:07.250Z] [runtime-status] [4256] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:36:07.268Z] [runtime-status] [4256] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:07.273Z] [runtime-status] [4256] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:07.278Z] [runtime-status] [4256] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:36:07.371Z] [runtime-status] [4256] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:36:07.372Z] [runtime-status] [4256] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:07.375Z] [runtime-status] [4256] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:07.376Z] [runtime-status] [4256] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:07.377Z] [runtime-status] [4256] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:10
+        "clientEmail: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPV15kdsYxfq4C\nN8klk1oxonrqCrNOF8NdMeYn50TLoUvk1uGoalOlqyoery8/apyzzC+g3pCGe3sV\nbE32Y0IvV9ehexouy+VOjgva0LC5DmNTOFwjWLYrJJ8yPu8vgIB3nq4VaZNSliSR\nFuxyBaf+n1mj2HJiw30oRzmN9ltdsikvjh+TRnbSpyeCu7foSMBToWlxu+WdfS2A\nuKhat50umxlFI4XaWgV5i5lUVkb/zboXju4mrUEUapZ6lmXNv41qUJoOdL8lzsB5\nLiEwt7MDNqhESWhOBZDwn7QVtGy70ApMbv+QVN92F0AlmgkS0sXI8b3o813FDyw2\nwjBZwijjAgMBAAECggEAApvvv3J+yC53A+a6z8LwCB7dm0z0khK0R47YsOWoO0Qo\n2QgOAX+kOzn3rWvFiIlDA1ozutUCJ/pG0FXmd0ErGvICiYqSIXoF+GKX0JjLfupC\niR1Bv5CFHlVEJMg49bXEW0nL/zX7mVCNXj88TRHRwHkCq90N6qM/ugshAZUF8+kq\nH2h4duno1Gw3B6d/ex4tzAZm2nT2MbagmZce1QzRyvduxDUVj0eD/YBhOnIo9Qd3\n/HbYTCCFKpGGsZtyQ14sxnmjlh0r3emZslMCozJynlbrH/xNyYt5dHS3pbcZ30xf\nc0g3Achmj6s3wWc3N9PvXWP8OsHL42CCaR6xnbZAdQKBgQD0v4Mwgz91qGs2PdxU\nWZMjNBfWET/CL1hXBhwXB0l++RHuXXCusU/7JmPb/3sChynLyn8hpE51cTpr7Rqq\nSaqiLnBm0HNILRO4MH1OdLv316Q+Y+yx48f4SHKzSo4EotASKDXIF9IDCk9/mn/z\nkw0AHK9LE38CcPsHB/t8gkK6FwKBgQDY35u4Zzsz+FYgDunmrBZVsf31E96eFVPE\nv6w8l20cgZRs6wkNnlpiqfTyP9hRS3eBbY13lpKrBCoYAq8VoBHFMUFPaVpXv6+z\nCT1UTLQs6Rm0MFD8vXmZjDdG4BaMWrtiIahpOyuuvL5G4oYiFqY0g7QlznZMX+gC\nCNeMA35jFQKBgH2yJbQyk9LfbkBrQM7pOhHoXR2Juk8Gdb4r2x1QlsRpMnZS8t4l\nHkiEDOEdspU3yZVqKCSk986FGlX3baxrLQEiDIQhJjO5QtljvdcfSLIew7FvLE6o\nBzlSK+Y8sfdbjrTkhcp/wVHiZ7XHKVN1AEZAdR5/oskkMSgJR3VIiPB9AoGBAJ+Z\nJvq0lX/wYEklUIJd3+3el9qUbb5+SXA/8duBQF27CmSBLt9jynZTRpxD2cgxtld8\nLKB2IadS4DtdNkW+z3UDg2GSUVbEDOO/h++SpwFp5W2SJPdp5KPX6RHydQWC++UC\nifIvBj2ITqrRpw5NBrEcvyUXZD1eUtm0chNqusblAoGBAPSA352mDoeGIIsTaGRj\ng/C3hjW3k5c20avQbMAZGZsp0GpDPiL2/9SviStXppnikxjHeJTiRGHfGtKQH9H4\nz9EjA4vAiq1lmr8UX0VaaSbqXu2xyrY49bu8BXib9JQ6fMbHPiJu0axetVYJn6vH\ne/BDPBmhF1Lyo9SzeVlk8F6B\n-----END PRIVATE KEY-----\n",
+                       ^^
+
+SyntaxError: Unexpected token '--'
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:36:07.418Z] [worker-~diagnostic~-e2be75c2-750c-47f6-8c74-e568babb4a9d]: exited 
+[debug] [2020-05-09T13:36:07.418Z] [worker-~diagnostic~-e2be75c2-750c-47f6-8c74-e568babb4a9d]: FINISHED 
+[debug] [2020-05-09T13:36:08.100Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:36:09.101Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:36:09.107Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:36:09.107Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:36:09.107Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:36:09.108Z] [worker-~diagnostic~-25569d4e-ee95-474c-b706-441044b90515]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\15184 
+[debug] [2020-05-09T13:36:09.108Z] [worker-~diagnostic~-25569d4e-ee95-474c-b706-441044b90515]: BUSY 
+[debug] [2020-05-09T13:36:09.858Z] [runtime-status] [15184] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:36:09.865Z] [runtime-status] [15184] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:36:09.873Z] [runtime-status] [15184] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:09.875Z] [runtime-status] [15184] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:09.878Z] [runtime-status] [15184] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:36:09.953Z] [runtime-status] [15184] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:36:09.954Z] [runtime-status] [15184] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:09.956Z] [runtime-status] [15184] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:09.956Z] [runtime-status] [15184] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:09.957Z] [runtime-status] [15184] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:36:10.039Z] [worker-~diagnostic~-25569d4e-ee95-474c-b706-441044b90515]: exited 
+[debug] [2020-05-09T13:36:10.039Z] [worker-~diagnostic~-25569d4e-ee95-474c-b706-441044b90515]: FINISHED 
+[debug] [2020-05-09T13:36:11.832Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:36:12.835Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:36:12.857Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:36:12.857Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:36:12.858Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:36:12.858Z] [worker-~diagnostic~-4ba6b00f-60c6-4b3a-ab79-81e796a7ff2b]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\12648 
+[debug] [2020-05-09T13:36:12.859Z] [worker-~diagnostic~-4ba6b00f-60c6-4b3a-ab79-81e796a7ff2b]: BUSY 
+[debug] [2020-05-09T13:36:13.478Z] [runtime-status] [12648] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:36:13.485Z] [runtime-status] [12648] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:36:13.493Z] [runtime-status] [12648] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:13.495Z] [runtime-status] [12648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:13.498Z] [runtime-status] [12648] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:36:13.553Z] [runtime-status] [12648] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:36:13.554Z] [runtime-status] [12648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:13.556Z] [runtime-status] [12648] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:13.557Z] [runtime-status] [12648] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:13.557Z] [runtime-status] [12648] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:8
+        projectId": "refferor-79247",
+                 ^^^^
+
+SyntaxError: Unexpected string
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:36:13.588Z] [worker-~diagnostic~-4ba6b00f-60c6-4b3a-ab79-81e796a7ff2b]: exited 
+[debug] [2020-05-09T13:36:13.588Z] [worker-~diagnostic~-4ba6b00f-60c6-4b3a-ab79-81e796a7ff2b]: FINISHED 
+[debug] [2020-05-09T13:36:13.851Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:36:14.853Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:36:14.862Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:36:14.862Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:36:14.862Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:36:14.863Z] [worker-~diagnostic~-cef2b77b-1157-43fc-a478-989d72e512dd]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\11336 
+[debug] [2020-05-09T13:36:14.863Z] [worker-~diagnostic~-cef2b77b-1157-43fc-a478-989d72e512dd]: BUSY 
+[debug] [2020-05-09T13:36:15.951Z] [runtime-status] [11336] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:36:15.978Z] [runtime-status] [11336] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:36:15.995Z] [runtime-status] [11336] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:16.000Z] [runtime-status] [11336] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:16.007Z] [runtime-status] [11336] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:36:16.132Z] [runtime-status] [11336] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:36:16.135Z] [runtime-status] [11336] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:16.142Z] [runtime-status] [11336] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:16.144Z] [runtime-status] [11336] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:16.144Z] [runtime-status] [11336] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:36:16.291Z] [worker-~diagnostic~-cef2b77b-1157-43fc-a478-989d72e512dd]: exited 
+[debug] [2020-05-09T13:36:16.291Z] [worker-~diagnostic~-cef2b77b-1157-43fc-a478-989d72e512dd]: FINISHED 
+[debug] [2020-05-09T13:36:24.277Z] ----------------------------------------------------------------------
+[debug] [2020-05-09T13:36:24.279Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2020-05-09T13:36:24.280Z] CLI Version:   8.2.0
+[debug] [2020-05-09T13:36:24.280Z] Platform:      win32
+[debug] [2020-05-09T13:36:24.280Z] Node Version:  v12.16.2
+[debug] [2020-05-09T13:36:24.281Z] Time:          Sat May 09 2020 17:36:24 GMT+0400 (Gulf Standard Time)
+[debug] [2020-05-09T13:36:24.281Z] ----------------------------------------------------------------------
+[debug] [2020-05-09T13:36:24.281Z] 
+[debug] [2020-05-09T13:36:24.293Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-09T13:36:24.294Z] > authorizing via signed-in user
+[debug] [2020-05-09T13:36:24.294Z] [iam] checking project refferor-79247 for permissions ["firebase.projects.get"]
+[debug] [2020-05-09T13:36:24.298Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/refferor-79247:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-05-09T13:36:26.425Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 09 May 2020 12:37:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1418","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-09T13:36:26.430Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/refferor-79247  
+ 
+[debug] [2020-05-09T13:36:26.970Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 09 May 2020 12:37:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: functions emulator started at http://localhost:5000
+[info] i  functions: Watching "D:\Refferor\referror\functions" for Cloud Functions...
+[debug] [2020-05-09T13:36:28.053Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:36:28.054Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:36:28.054Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:36:28.055Z] [worker-~diagnostic~-dc76176b-e8b0-46ba-9dfa-f4d675b36660]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\11500 
+[debug] [2020-05-09T13:36:28.055Z] [worker-~diagnostic~-dc76176b-e8b0-46ba-9dfa-f4d675b36660]: BUSY 
+[debug] [2020-05-09T13:36:28.958Z] [runtime-status] [11500] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:36:28.968Z] [runtime-status] [11500] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:36:28.982Z] [runtime-status] [11500] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:28.986Z] [runtime-status] [11500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:28.991Z] [runtime-status] [11500] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:36:29.108Z] [runtime-status] [11500] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:36:29.109Z] [runtime-status] [11500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:29.112Z] [runtime-status] [11500] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:29.113Z] [runtime-status] [11500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:36:29.114Z] [runtime-status] [11500] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:36:29.228Z] [worker-~diagnostic~-dc76176b-e8b0-46ba-9dfa-f4d675b36660]: exited 
+[debug] [2020-05-09T13:36:29.229Z] [worker-~diagnostic~-dc76176b-e8b0-46ba-9dfa-f4d675b36660]: FINISHED 
+[debug] [2020-05-09T13:40:08.254Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:09.258Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:09.274Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:09.274Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:09.275Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:09.276Z] [worker-~diagnostic~-188866e0-1480-4c67-af5e-5bcf7d722713]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\9788 
+[debug] [2020-05-09T13:40:09.276Z] [worker-~diagnostic~-188866e0-1480-4c67-af5e-5bcf7d722713]: BUSY 
+[debug] [2020-05-09T13:40:09.897Z] [runtime-status] [9788] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:09.904Z] [runtime-status] [9788] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:09.913Z] [runtime-status] [9788] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:09.915Z] [runtime-status] [9788] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:09.917Z] [runtime-status] [9788] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:09.977Z] [runtime-status] [9788] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:09.978Z] [runtime-status] [9788] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:09.980Z] [runtime-status] [9788] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:09.981Z] [runtime-status] [9788] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:09.981Z] [runtime-status] [9788] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:8
+        "projectId: "refferor-79247",
+                     ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:10.009Z] [worker-~diagnostic~-188866e0-1480-4c67-af5e-5bcf7d722713]: exited 
+[debug] [2020-05-09T13:40:10.009Z] [worker-~diagnostic~-188866e0-1480-4c67-af5e-5bcf7d722713]: FINISHED 
+[debug] [2020-05-09T13:40:11.100Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:12.102Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:12.112Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:12.113Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:12.113Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:12.113Z] [worker-~diagnostic~-9d458833-320c-4ebf-8bf8-6101cddc03f3]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\3768 
+[debug] [2020-05-09T13:40:12.113Z] [worker-~diagnostic~-9d458833-320c-4ebf-8bf8-6101cddc03f3]: BUSY 
+[debug] [2020-05-09T13:40:12.791Z] [runtime-status] [3768] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:12.799Z] [runtime-status] [3768] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:12.808Z] [runtime-status] [3768] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:12.811Z] [runtime-status] [3768] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:12.815Z] [runtime-status] [3768] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:12.832Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:12.903Z] [runtime-status] [3768] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:12.905Z] [runtime-status] [3768] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:12.907Z] [runtime-status] [3768] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:12.907Z] [runtime-status] [3768] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:12.908Z] [runtime-status] [3768] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:10
+        clientEmail": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPV15kdsYxfq4C\nN8klk1oxonrqCrNOF8NdMeYn50TLoUvk1uGoalOlqyoery8/apyzzC+g3pCGe3sV\nbE32Y0IvV9ehexouy+VOjgva0LC5DmNTOFwjWLYrJJ8yPu8vgIB3nq4VaZNSliSR\nFuxyBaf+n1mj2HJiw30oRzmN9ltdsikvjh+TRnbSpyeCu7foSMBToWlxu+WdfS2A\nuKhat50umxlFI4XaWgV5i5lUVkb/zboXju4mrUEUapZ6lmXNv41qUJoOdL8lzsB5\nLiEwt7MDNqhESWhOBZDwn7QVtGy70ApMbv+QVN92F0AlmgkS0sXI8b3o813FDyw2\nwjBZwijjAgMBAAECggEAApvvv3J+yC53A+a6z8LwCB7dm0z0khK0R47YsOWoO0Qo\n2QgOAX+kOzn3rWvFiIlDA1ozutUCJ/pG0FXmd0ErGvICiYqSIXoF+GKX0JjLfupC\niR1Bv5CFHlVEJMg49bXEW0nL/zX7mVCNXj88TRHRwHkCq90N6qM/ugshAZUF8+kq\nH2h4duno1Gw3B6d/ex4tzAZm2nT2MbagmZce1QzRyvduxDUVj0eD/YBhOnIo9Qd3\n/HbYTCCFKpGGsZtyQ14sxnmjlh0r3emZslMCozJynlbrH/xNyYt5dHS3pbcZ30xf\nc0g3Achmj6s3wWc3N9PvXWP8OsHL42CCaR6xnbZAdQKBgQD0v4Mwgz91qGs2PdxU\nWZMjNBfWET/CL1hXBhwXB0l++RHuXXCusU/7JmPb/3sChynLyn8hpE51cTpr7Rqq\nSaqiLnBm0HNILRO4MH1OdLv316Q+Y+yx48f4SHKzSo4EotASKDXIF9IDCk9/mn/z\nkw0AHK9LE38CcPsHB/t8gkK6FwKBgQDY35u4Zzsz+FYgDunmrBZVsf31E96eFVPE\nv6w8l20cgZRs6wkNnlpiqfTyP9hRS3eBbY13lpKrBCoYAq8VoBHFMUFPaVpXv6+z\nCT1UTLQs6Rm0MFD8vXmZjDdG4BaMWrtiIahpOyuuvL5G4oYiFqY0g7QlznZMX+gC\nCNeMA35jFQKBgH2yJbQyk9LfbkBrQM7pOhHoXR2Juk8Gdb4r2x1QlsRpMnZS8t4l\nHkiEDOEdspU3yZVqKCSk986FGlX3baxrLQEiDIQhJjO5QtljvdcfSLIew7FvLE6o\nBzlSK+Y8sfdbjrTkhcp/wVHiZ7XHKVN1AEZAdR5/oskkMSgJR3VIiPB9AoGBAJ+Z\nJvq0lX/wYEklUIJd3+3el9qUbb5+SXA/8duBQF27CmSBLt9jynZTRpxD2cgxtld8\nLKB2IadS4DtdNkW+z3UDg2GSUVbEDOO/h++SpwFp5W2SJPdp5KPX6RHydQWC++UC\nifIvBj2ITqrRpw5NBrEcvyUXZD1eUtm0chNqusblAoGBAPSA352mDoeGIIsTaGRj\ng/C3hjW3k5c20avQbMAZGZsp0GpDPiL2/9SviStXppnikxjHeJTiRGHfGtKQH9H4\nz9EjA4vAiq1lmr8UX0VaaSbqXu2xyrY49bu8BXib9JQ6fMbHPiJu0axetVYJn6vH\ne/BDPBmhF1Lyo9SzeVlk8F6B\n-----END PRIVATE KEY-----\n",
+                   ^^^^
+
+SyntaxError: Unexpected string
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:12.943Z] [worker-~diagnostic~-9d458833-320c-4ebf-8bf8-6101cddc03f3]: exited 
+[debug] [2020-05-09T13:40:12.943Z] [worker-~diagnostic~-9d458833-320c-4ebf-8bf8-6101cddc03f3]: FINISHED 
+[debug] [2020-05-09T13:40:13.833Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:13.850Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:13.850Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:13.851Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:13.851Z] [worker-~diagnostic~-ef2aee1a-17e7-4214-8931-a07f80c8d540]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\7244 
+[debug] [2020-05-09T13:40:13.851Z] [worker-~diagnostic~-ef2aee1a-17e7-4214-8931-a07f80c8d540]: BUSY 
+[debug] [2020-05-09T13:40:14.512Z] [runtime-status] [7244] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:14.519Z] [runtime-status] [7244] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:14.527Z] [runtime-status] [7244] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:14.529Z] [runtime-status] [7244] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:14.533Z] [runtime-status] [7244] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:14.596Z] [runtime-status] [7244] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:14.597Z] [runtime-status] [7244] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:14.599Z] [runtime-status] [7244] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:14.600Z] [runtime-status] [7244] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:14.600Z] [runtime-status] [7244] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:10
+        clientEmail": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPV15kdsYxfq4C\nN8klk1oxonrqCrNOF8NdMeYn50TLoUvk1uGoalOlqyoery8/apyzzC+g3pCGe3sV\nbE32Y0IvV9ehexouy+VOjgva0LC5DmNTOFwjWLYrJJ8yPu8vgIB3nq4VaZNSliSR\nFuxyBaf+n1mj2HJiw30oRzmN9ltdsikvjh+TRnbSpyeCu7foSMBToWlxu+WdfS2A\nuKhat50umxlFI4XaWgV5i5lUVkb/zboXju4mrUEUapZ6lmXNv41qUJoOdL8lzsB5\nLiEwt7MDNqhESWhOBZDwn7QVtGy70ApMbv+QVN92F0AlmgkS0sXI8b3o813FDyw2\nwjBZwijjAgMBAAECggEAApvvv3J+yC53A+a6z8LwCB7dm0z0khK0R47YsOWoO0Qo\n2QgOAX+kOzn3rWvFiIlDA1ozutUCJ/pG0FXmd0ErGvICiYqSIXoF+GKX0JjLfupC\niR1Bv5CFHlVEJMg49bXEW0nL/zX7mVCNXj88TRHRwHkCq90N6qM/ugshAZUF8+kq\nH2h4duno1Gw3B6d/ex4tzAZm2nT2MbagmZce1QzRyvduxDUVj0eD/YBhOnIo9Qd3\n/HbYTCCFKpGGsZtyQ14sxnmjlh0r3emZslMCozJynlbrH/xNyYt5dHS3pbcZ30xf\nc0g3Achmj6s3wWc3N9PvXWP8OsHL42CCaR6xnbZAdQKBgQD0v4Mwgz91qGs2PdxU\nWZMjNBfWET/CL1hXBhwXB0l++RHuXXCusU/7JmPb/3sChynLyn8hpE51cTpr7Rqq\nSaqiLnBm0HNILRO4MH1OdLv316Q+Y+yx48f4SHKzSo4EotASKDXIF9IDCk9/mn/z\nkw0AHK9LE38CcPsHB/t8gkK6FwKBgQDY35u4Zzsz+FYgDunmrBZVsf31E96eFVPE\nv6w8l20cgZRs6wkNnlpiqfTyP9hRS3eBbY13lpKrBCoYAq8VoBHFMUFPaVpXv6+z\nCT1UTLQs6Rm0MFD8vXmZjDdG4BaMWrtiIahpOyuuvL5G4oYiFqY0g7QlznZMX+gC\nCNeMA35jFQKBgH2yJbQyk9LfbkBrQM7pOhHoXR2Juk8Gdb4r2x1QlsRpMnZS8t4l\nHkiEDOEdspU3yZVqKCSk986FGlX3baxrLQEiDIQhJjO5QtljvdcfSLIew7FvLE6o\nBzlSK+Y8sfdbjrTkhcp/wVHiZ7XHKVN1AEZAdR5/oskkMSgJR3VIiPB9AoGBAJ+Z\nJvq0lX/wYEklUIJd3+3el9qUbb5+SXA/8duBQF27CmSBLt9jynZTRpxD2cgxtld8\nLKB2IadS4DtdNkW+z3UDg2GSUVbEDOO/h++SpwFp5W2SJPdp5KPX6RHydQWC++UC\nifIvBj2ITqrRpw5NBrEcvyUXZD1eUtm0chNqusblAoGBAPSA352mDoeGIIsTaGRj\ng/C3hjW3k5c20avQbMAZGZsp0GpDPiL2/9SviStXppnikxjHeJTiRGHfGtKQH9H4\nz9EjA4vAiq1lmr8UX0VaaSbqXu2xyrY49bu8BXib9JQ6fMbHPiJu0axetVYJn6vH\ne/BDPBmhF1Lyo9SzeVlk8F6B\n-----END PRIVATE KEY-----\n",
+                   ^^^^
+
+SyntaxError: Unexpected string
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:14.631Z] [worker-~diagnostic~-ef2aee1a-17e7-4214-8931-a07f80c8d540]: exited 
+[debug] [2020-05-09T13:40:14.631Z] [worker-~diagnostic~-ef2aee1a-17e7-4214-8931-a07f80c8d540]: FINISHED 
+[debug] [2020-05-09T13:40:14.915Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:15.917Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:15.923Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:15.923Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:15.923Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:15.923Z] [worker-~diagnostic~-c706b008-92c8-43e2-9ecd-ebb630528b45]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\4848 
+[debug] [2020-05-09T13:40:15.924Z] [worker-~diagnostic~-c706b008-92c8-43e2-9ecd-ebb630528b45]: BUSY 
+[debug] [2020-05-09T13:40:15.977Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:16.605Z] [runtime-status] [4848] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:16.614Z] [runtime-status] [4848] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:16.621Z] [runtime-status] [4848] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:16.624Z] [runtime-status] [4848] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:16.627Z] [runtime-status] [4848] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:16.686Z] [runtime-status] [4848] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:16.687Z] [runtime-status] [4848] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:16.688Z] [runtime-status] [4848] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:16.689Z] [runtime-status] [4848] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:16.690Z] [runtime-status] [4848] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:11
+        "privateKey: "refferor-79247@appspot.gserviceaccount.com",
+                      ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:16.722Z] [worker-~diagnostic~-c706b008-92c8-43e2-9ecd-ebb630528b45]: exited 
+[debug] [2020-05-09T13:40:16.722Z] [worker-~diagnostic~-c706b008-92c8-43e2-9ecd-ebb630528b45]: FINISHED 
+[debug] [2020-05-09T13:40:16.978Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:16.983Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:16.983Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:16.983Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:16.983Z] [worker-~diagnostic~-221166c4-d349-4b7e-a5f6-f53ce1ca9254]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\12256 
+[debug] [2020-05-09T13:40:16.984Z] [worker-~diagnostic~-221166c4-d349-4b7e-a5f6-f53ce1ca9254]: BUSY 
+[debug] [2020-05-09T13:40:17.566Z] [runtime-status] [12256] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:17.574Z] [runtime-status] [12256] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:17.581Z] [runtime-status] [12256] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:17.583Z] [runtime-status] [12256] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:17.586Z] [runtime-status] [12256] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:17.641Z] [runtime-status] [12256] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:17.643Z] [runtime-status] [12256] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:17.644Z] [runtime-status] [12256] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:17.645Z] [runtime-status] [12256] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:17.646Z] [runtime-status] [12256] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:11
+        "privateKey: "refferor-79247@appspot.gserviceaccount.com",
+                      ^^^^^^^^
+
+SyntaxError: Unexpected identifier
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:17.674Z] [worker-~diagnostic~-221166c4-d349-4b7e-a5f6-f53ce1ca9254]: exited 
+[debug] [2020-05-09T13:40:17.674Z] [worker-~diagnostic~-221166c4-d349-4b7e-a5f6-f53ce1ca9254]: FINISHED 
+[debug] [2020-05-09T13:40:17.852Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:18.854Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:18.863Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:18.864Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:18.864Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:18.865Z] [worker-~diagnostic~-0ef102de-b026-4925-a240-fe03151d5800]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\5528 
+[debug] [2020-05-09T13:40:18.866Z] [worker-~diagnostic~-0ef102de-b026-4925-a240-fe03151d5800]: BUSY 
+[debug] [2020-05-09T13:40:19.520Z] [runtime-status] [5528] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:19.528Z] [runtime-status] [5528] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:19.535Z] [runtime-status] [5528] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:19.538Z] [runtime-status] [5528] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:19.542Z] [runtime-status] [5528] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:19.606Z] [runtime-status] [5528] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:19.607Z] [runtime-status] [5528] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:19.609Z] [runtime-status] [5528] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:19.610Z] [runtime-status] [5528] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:19.610Z] [runtime-status] [5528] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:19.708Z] [worker-~diagnostic~-0ef102de-b026-4925-a240-fe03151d5800]: exited 
+[debug] [2020-05-09T13:40:19.708Z] [worker-~diagnostic~-0ef102de-b026-4925-a240-fe03151d5800]: FINISHED 
+[debug] [2020-05-09T13:40:30.396Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:31.397Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:31.410Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:31.411Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:31.412Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:31.414Z] [worker-~diagnostic~-37897af2-1df5-4270-91f3-a8fe606ec77f]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\8004 
+[debug] [2020-05-09T13:40:31.415Z] [worker-~diagnostic~-37897af2-1df5-4270-91f3-a8fe606ec77f]: BUSY 
+[debug] [2020-05-09T13:40:32.025Z] [runtime-status] [8004] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:32.032Z] [runtime-status] [8004] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:32.040Z] [runtime-status] [8004] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:32.042Z] [runtime-status] [8004] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:32.045Z] [runtime-status] [8004] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:32.104Z] [runtime-status] [8004] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:32.105Z] [runtime-status] [8004] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:32.107Z] [runtime-status] [8004] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:32.107Z] [runtime-status] [8004] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:32.108Z] [runtime-status] [8004] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:10
+        clientEmail: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPV15kdsYxfq4C\nN8klk1oxonrqCrNOF8NdMeYn50TLoUvk1uGoalOlqyoery8/apyzzC+g3pCGe3sV\nbE32Y0IvV9ehexouy+VOjgva0LC5DmNTOFwjWLYrJJ8yPu8vgIB3nq4VaZNSliSR\nFuxyBaf+n1mj2HJiw30oRzmN9ltdsikvjh+TRnbSpyeCu7foSMBToWlxu+WdfS2A\nuKhat50umxlFI4XaWgV5i5lUVkb/zboXju4mrUEUapZ6lmXNv41qUJoOdL8lzsB5\nLiEwt7MDNqhESWhOBZDwn7QVtGy70ApMbv+QVN92F0AlmgkS0sXI8b3o813FDyw2\nwjBZwijjAgMBAAECggEAApvvv3J+yC53A+a6z8LwCB7dm0z0khK0R47YsOWoO0Qo\n2QgOAX+kOzn3rWvFiIlDA1ozutUCJ/pG0FXmd0ErGvICiYqSIXoF+GKX0JjLfupC\niR1Bv5CFHlVEJMg49bXEW0nL/zX7mVCNXj88TRHRwHkCq90N6qM/ugshAZUF8+kq\nH2h4duno1Gw3B6d/ex4tzAZm2nT2MbagmZce1QzRyvduxDUVj0eD/YBhOnIo9Qd3\n/HbYTCCFKpGGsZtyQ14sxnmjlh0r3emZslMCozJynlbrH/xNyYt5dHS3pbcZ30xf\nc0g3Achmj6s3wWc3N9PvXWP8OsHL42CCaR6xnbZAdQKBgQD0v4Mwgz91qGs2PdxU\nWZMjNBfWET/CL1hXBhwXB0l++RHuXXCusU/7JmPb/3sChynLyn8hpE51cTpr7Rqq\nSaqiLnBm0HNILRO4MH1OdLv316Q+Y+yx48f4SHKzSo4EotASKDXIF9IDCk9/mn/z\nkw0AHK9LE38CcPsHB/t8gkK6FwKBgQDY35u4Zzsz+FYgDunmrBZVsf31E96eFVPE\nv6w8l20cgZRs6wkNnlpiqfTyP9hRS3eBbY13lpKrBCoYAq8VoBHFMUFPaVpXv6+z\nCT1UTLQs6Rm0MFD8vXmZjDdG4BaMWrtiIahpOyuuvL5G4oYiFqY0g7QlznZMX+gC\nCNeMA35jFQKBgH2yJbQyk9LfbkBrQM7pOhHoXR2Juk8Gdb4r2x1QlsRpMnZS8t4l\nHkiEDOEdspU3yZVqKCSk986FGlX3baxrLQEiDIQhJjO5QtljvdcfSLIew7FvLE6o\nBzlSK+Y8sfdbjrTkhcp/wVHiZ7XHKVN1AEZAdR5/oskkMSgJR3VIiPB9AoGBAJ+Z\nJvq0lX/wYEklUIJd3+3el9qUbb5+SXA/8duBQF27CmSBLt9jynZTRpxD2cgxtld8\nLKB2IadS4DtdNkW+z3UDg2GSUVbEDOO/h++SpwFp5W2SJPdp5KPX6RHydQWC++UC\nifIvBj2ITqrRpw5NBrEcvyUXZD1eUtm0chNqusblAoGBAPSA352mDoeGIIsTaGRj\ng/C3hjW3k5c20avQbMAZGZsp0GpDPiL2/9SviStXppnikxjHeJTiRGHfGtKQH9H4\nz9EjA4vAiq1lmr8UX0VaaSbqXu2xyrY49bu8BXib9JQ6fMbHPiJu0axetVYJn6vH\ne/BDPBmhF1Lyo9SzeVlk8F6B\n-----END PRIVATE KEY-----\n"replace(/\\n/g, '\n') ,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+SyntaxError: Unexpected identifier
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:32.139Z] [worker-~diagnostic~-37897af2-1df5-4270-91f3-a8fe606ec77f]: exited 
+[debug] [2020-05-09T13:40:32.139Z] [worker-~diagnostic~-37897af2-1df5-4270-91f3-a8fe606ec77f]: FINISHED 
+[debug] [2020-05-09T13:40:33.884Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:34.885Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:34.896Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:34.897Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:34.897Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:34.898Z] [worker-~diagnostic~-65fe570f-0e86-4f43-8dc9-80aa920cf701]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\6816 
+[debug] [2020-05-09T13:40:34.898Z] [worker-~diagnostic~-65fe570f-0e86-4f43-8dc9-80aa920cf701]: BUSY 
+[debug] [2020-05-09T13:40:35.160Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:35.532Z] [runtime-status] [6816] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:35.539Z] [runtime-status] [6816] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:35.547Z] [runtime-status] [6816] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:35.549Z] [runtime-status] [6816] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:35.552Z] [runtime-status] [6816] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:35.611Z] [runtime-status] [6816] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:35.612Z] [runtime-status] [6816] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:35.613Z] [runtime-status] [6816] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:35.615Z] [runtime-status] [6816] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:35.615Z] [runtime-status] [6816] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:10
+        clientEmail: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPV15kdsYxfq4C\nN8klk1oxonrqCrNOF8NdMeYn50TLoUvk1uGoalOlqyoery8/apyzzC+g3pCGe3sV\nbE32Y0IvV9ehexouy+VOjgva0LC5DmNTOFwjWLYrJJ8yPu8vgIB3nq4VaZNSliSR\nFuxyBaf+n1mj2HJiw30oRzmN9ltdsikvjh+TRnbSpyeCu7foSMBToWlxu+WdfS2A\nuKhat50umxlFI4XaWgV5i5lUVkb/zboXju4mrUEUapZ6lmXNv41qUJoOdL8lzsB5\nLiEwt7MDNqhESWhOBZDwn7QVtGy70ApMbv+QVN92F0AlmgkS0sXI8b3o813FDyw2\nwjBZwijjAgMBAAECggEAApvvv3J+yC53A+a6z8LwCB7dm0z0khK0R47YsOWoO0Qo\n2QgOAX+kOzn3rWvFiIlDA1ozutUCJ/pG0FXmd0ErGvICiYqSIXoF+GKX0JjLfupC\niR1Bv5CFHlVEJMg49bXEW0nL/zX7mVCNXj88TRHRwHkCq90N6qM/ugshAZUF8+kq\nH2h4duno1Gw3B6d/ex4tzAZm2nT2MbagmZce1QzRyvduxDUVj0eD/YBhOnIo9Qd3\n/HbYTCCFKpGGsZtyQ14sxnmjlh0r3emZslMCozJynlbrH/xNyYt5dHS3pbcZ30xf\nc0g3Achmj6s3wWc3N9PvXWP8OsHL42CCaR6xnbZAdQKBgQD0v4Mwgz91qGs2PdxU\nWZMjNBfWET/CL1hXBhwXB0l++RHuXXCusU/7JmPb/3sChynLyn8hpE51cTpr7Rqq\nSaqiLnBm0HNILRO4MH1OdLv316Q+Y+yx48f4SHKzSo4EotASKDXIF9IDCk9/mn/z\nkw0AHK9LE38CcPsHB/t8gkK6FwKBgQDY35u4Zzsz+FYgDunmrBZVsf31E96eFVPE\nv6w8l20cgZRs6wkNnlpiqfTyP9hRS3eBbY13lpKrBCoYAq8VoBHFMUFPaVpXv6+z\nCT1UTLQs6Rm0MFD8vXmZjDdG4BaMWrtiIahpOyuuvL5G4oYiFqY0g7QlznZMX+gC\nCNeMA35jFQKBgH2yJbQyk9LfbkBrQM7pOhHoXR2Juk8Gdb4r2x1QlsRpMnZS8t4l\nHkiEDOEdspU3yZVqKCSk986FGlX3baxrLQEiDIQhJjO5QtljvdcfSLIew7FvLE6o\nBzlSK+Y8sfdbjrTkhcp/wVHiZ7XHKVN1AEZAdR5/oskkMSgJR3VIiPB9AoGBAJ+Z\nJvq0lX/wYEklUIJd3+3el9qUbb5+SXA/8duBQF27CmSBLt9jynZTRpxD2cgxtld8\nLKB2IadS4DtdNkW+z3UDg2GSUVbEDOO/h++SpwFp5W2SJPdp5KPX6RHydQWC++UC\nifIvBj2ITqrRpw5NBrEcvyUXZD1eUtm0chNqusblAoGBAPSA352mDoeGIIsTaGRj\ng/C3hjW3k5c20avQbMAZGZsp0GpDPiL2/9SviStXppnikxjHeJTiRGHfGtKQH9H4\nz9EjA4vAiq1lmr8UX0VaaSbqXu2xyrY49bu8BXib9JQ6fMbHPiJu0axetVYJn6vH\ne/BDPBmhF1Lyo9SzeVlk8F6B\n-----END PRIVATE KEY-----\n".,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:35.645Z] [worker-~diagnostic~-65fe570f-0e86-4f43-8dc9-80aa920cf701]: exited 
+[debug] [2020-05-09T13:40:35.645Z] [worker-~diagnostic~-65fe570f-0e86-4f43-8dc9-80aa920cf701]: FINISHED 
+[debug] [2020-05-09T13:40:36.160Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:36.164Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:36.165Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:36.165Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:36.165Z] [worker-~diagnostic~-b96544b9-7f1f-400c-8c8f-8d528b3e5f18]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\10076 
+[debug] [2020-05-09T13:40:36.165Z] [worker-~diagnostic~-b96544b9-7f1f-400c-8c8f-8d528b3e5f18]: BUSY 
+[debug] [2020-05-09T13:40:36.803Z] [runtime-status] [10076] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:36.814Z] [runtime-status] [10076] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:36.826Z] [runtime-status] [10076] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:36.830Z] [runtime-status] [10076] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:36.837Z] [runtime-status] [10076] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:36.906Z] [runtime-status] [10076] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:36.908Z] [runtime-status] [10076] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:36.909Z] [runtime-status] [10076] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:36.910Z] [runtime-status] [10076] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:36.910Z] [runtime-status] [10076] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  D:\Refferor\referror\functions\index.js:10
+        clientEmail: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPV15kdsYxfq4C\nN8klk1oxonrqCrNOF8NdMeYn50TLoUvk1uGoalOlqyoery8/apyzzC+g3pCGe3sV\nbE32Y0IvV9ehexouy+VOjgva0LC5DmNTOFwjWLYrJJ8yPu8vgIB3nq4VaZNSliSR\nFuxyBaf+n1mj2HJiw30oRzmN9ltdsikvjh+TRnbSpyeCu7foSMBToWlxu+WdfS2A\nuKhat50umxlFI4XaWgV5i5lUVkb/zboXju4mrUEUapZ6lmXNv41qUJoOdL8lzsB5\nLiEwt7MDNqhESWhOBZDwn7QVtGy70ApMbv+QVN92F0AlmgkS0sXI8b3o813FDyw2\nwjBZwijjAgMBAAECggEAApvvv3J+yC53A+a6z8LwCB7dm0z0khK0R47YsOWoO0Qo\n2QgOAX+kOzn3rWvFiIlDA1ozutUCJ/pG0FXmd0ErGvICiYqSIXoF+GKX0JjLfupC\niR1Bv5CFHlVEJMg49bXEW0nL/zX7mVCNXj88TRHRwHkCq90N6qM/ugshAZUF8+kq\nH2h4duno1Gw3B6d/ex4tzAZm2nT2MbagmZce1QzRyvduxDUVj0eD/YBhOnIo9Qd3\n/HbYTCCFKpGGsZtyQ14sxnmjlh0r3emZslMCozJynlbrH/xNyYt5dHS3pbcZ30xf\nc0g3Achmj6s3wWc3N9PvXWP8OsHL42CCaR6xnbZAdQKBgQD0v4Mwgz91qGs2PdxU\nWZMjNBfWET/CL1hXBhwXB0l++RHuXXCusU/7JmPb/3sChynLyn8hpE51cTpr7Rqq\nSaqiLnBm0HNILRO4MH1OdLv316Q+Y+yx48f4SHKzSo4EotASKDXIF9IDCk9/mn/z\nkw0AHK9LE38CcPsHB/t8gkK6FwKBgQDY35u4Zzsz+FYgDunmrBZVsf31E96eFVPE\nv6w8l20cgZRs6wkNnlpiqfTyP9hRS3eBbY13lpKrBCoYAq8VoBHFMUFPaVpXv6+z\nCT1UTLQs6Rm0MFD8vXmZjDdG4BaMWrtiIahpOyuuvL5G4oYiFqY0g7QlznZMX+gC\nCNeMA35jFQKBgH2yJbQyk9LfbkBrQM7pOhHoXR2Juk8Gdb4r2x1QlsRpMnZS8t4l\nHkiEDOEdspU3yZVqKCSk986FGlX3baxrLQEiDIQhJjO5QtljvdcfSLIew7FvLE6o\nBzlSK+Y8sfdbjrTkhcp/wVHiZ7XHKVN1AEZAdR5/oskkMSgJR3VIiPB9AoGBAJ+Z\nJvq0lX/wYEklUIJd3+3el9qUbb5+SXA/8duBQF27CmSBLt9jynZTRpxD2cgxtld8\nLKB2IadS4DtdNkW+z3UDg2GSUVbEDOO/h++SpwFp5W2SJPdp5KPX6RHydQWC++UC\nifIvBj2ITqrRpw5NBrEcvyUXZD1eUtm0chNqusblAoGBAPSA352mDoeGIIsTaGRj\ng/C3hjW3k5c20avQbMAZGZsp0GpDPiL2/9SviStXppnikxjHeJTiRGHfGtKQH9H4\nz9EjA4vAiq1lmr8UX0VaaSbqXu2xyrY49bu8BXib9JQ6fMbHPiJu0axetVYJn6vH\ne/BDPBmhF1Lyo9SzeVlk8F6B\n-----END PRIVATE KEY-----\n".,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (internal/modules/cjs/loader.js:1070:16)
+    at Module._compile (internal/modules/cjs/loader.js:1120:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+    at Module.require (internal/modules/cjs/loader.js:1042:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:661:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:36.940Z] [worker-~diagnostic~-b96544b9-7f1f-400c-8c8f-8d528b3e5f18]: exited 
+[debug] [2020-05-09T13:40:36.940Z] [worker-~diagnostic~-b96544b9-7f1f-400c-8c8f-8d528b3e5f18]: FINISHED 
+[debug] [2020-05-09T13:40:37.086Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:40:38.088Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:40:38.107Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:38.108Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:38.109Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:38.109Z] [worker-~diagnostic~-43c00bf9-10dd-43d2-911b-7058b85ea621]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\5676 
+[debug] [2020-05-09T13:40:38.110Z] [worker-~diagnostic~-43c00bf9-10dd-43d2-911b-7058b85ea621]: BUSY 
+[debug] [2020-05-09T13:40:38.711Z] [runtime-status] [5676] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:38.719Z] [runtime-status] [5676] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:38.728Z] [runtime-status] [5676] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:38.730Z] [runtime-status] [5676] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:38.733Z] [runtime-status] [5676] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:38.805Z] [runtime-status] [5676] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:38.806Z] [runtime-status] [5676] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:38.808Z] [runtime-status] [5676] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:38.809Z] [runtime-status] [5676] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:38.809Z] [runtime-status] [5676] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:38.910Z] [worker-~diagnostic~-43c00bf9-10dd-43d2-911b-7058b85ea621]: exited 
+[debug] [2020-05-09T13:40:38.910Z] [worker-~diagnostic~-43c00bf9-10dd-43d2-911b-7058b85ea621]: FINISHED 
+[debug] [2020-05-09T13:40:46.583Z] ----------------------------------------------------------------------
+[debug] [2020-05-09T13:40:46.586Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2020-05-09T13:40:46.587Z] CLI Version:   8.2.0
+[debug] [2020-05-09T13:40:46.587Z] Platform:      win32
+[debug] [2020-05-09T13:40:46.587Z] Node Version:  v12.16.2
+[debug] [2020-05-09T13:40:46.588Z] Time:          Sat May 09 2020 17:40:46 GMT+0400 (Gulf Standard Time)
+[debug] [2020-05-09T13:40:46.588Z] ----------------------------------------------------------------------
+[debug] [2020-05-09T13:40:46.588Z] 
+[debug] [2020-05-09T13:40:46.601Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-09T13:40:46.602Z] > authorizing via signed-in user
+[debug] [2020-05-09T13:40:46.603Z] [iam] checking project refferor-79247 for permissions ["firebase.projects.get"]
+[debug] [2020-05-09T13:40:46.607Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/refferor-79247:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-05-09T13:40:48.667Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 09 May 2020 12:41:23 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1414","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-09T13:40:48.673Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/refferor-79247  
+ 
+[debug] [2020-05-09T13:40:49.611Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 09 May 2020 12:41:24 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: functions emulator started at http://localhost:5000
+[info] i  functions: Watching "D:\Refferor\referror\functions" for Cloud Functions...
+[debug] [2020-05-09T13:40:50.685Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:40:50.686Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:40:50.686Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:40:50.687Z] [worker-~diagnostic~-f818fc80-8201-4734-98c1-5b2850bcc846]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\14812 
+[debug] [2020-05-09T13:40:50.688Z] [worker-~diagnostic~-f818fc80-8201-4734-98c1-5b2850bcc846]: BUSY 
+[debug] [2020-05-09T13:40:51.282Z] [runtime-status] [14812] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:40:51.289Z] [runtime-status] [14812] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:40:51.297Z] [runtime-status] [14812] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:51.299Z] [runtime-status] [14812] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:51.302Z] [runtime-status] [14812] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:40:51.358Z] [runtime-status] [14812] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:40:51.359Z] [runtime-status] [14812] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:51.360Z] [runtime-status] [14812] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:51.361Z] [runtime-status] [14812] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:40:51.361Z] [runtime-status] [14812] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:40:51.442Z] [worker-~diagnostic~-f818fc80-8201-4734-98c1-5b2850bcc846]: exited 
+[debug] [2020-05-09T13:40:51.442Z] [worker-~diagnostic~-f818fc80-8201-4734-98c1-5b2850bcc846]: FINISHED 
+[debug] [2020-05-09T13:41:03.827Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:41:04.831Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:41:04.845Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:41:04.846Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:41:04.846Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:41:04.846Z] [worker-~diagnostic~-df0c5aa0-bacf-4dea-8fc7-6475b46d6d26]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\4824 
+[debug] [2020-05-09T13:41:04.847Z] [worker-~diagnostic~-df0c5aa0-bacf-4dea-8fc7-6475b46d6d26]: BUSY 
+[debug] [2020-05-09T13:41:05.431Z] File D:\Refferor\referror\functions\index.js changed, reloading triggers 
+[debug] [2020-05-09T13:41:05.593Z] [runtime-status] [4824] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:41:05.601Z] [runtime-status] [4824] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:41:05.614Z] [runtime-status] [4824] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:05.617Z] [runtime-status] [4824] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:05.620Z] [runtime-status] [4824] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:41:05.812Z] [runtime-status] [4824] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:41:05.815Z] [runtime-status] [4824] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:05.821Z] [runtime-status] [4824] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:05.824Z] [runtime-status] [4824] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:05.825Z] [runtime-status] [4824] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:41:06.036Z] [worker-~diagnostic~-df0c5aa0-bacf-4dea-8fc7-6475b46d6d26]: exited 
+[debug] [2020-05-09T13:41:06.036Z] [worker-~diagnostic~-df0c5aa0-bacf-4dea-8fc7-6475b46d6d26]: FINISHED 
+[debug] [2020-05-09T13:41:06.432Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0 
+[debug] [2020-05-09T13:41:06.439Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-05-09T13:41:06.440Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-05-09T13:41:06.441Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-05-09T13:41:06.441Z] [worker-~diagnostic~-1fc8aab3-1395-4593-be4d-2d657e59029b]: Assigning socketPath: \\?\pipe\D:\Refferor\referror\functions\9852 
+[debug] [2020-05-09T13:41:06.441Z] [worker-~diagnostic~-1fc8aab3-1395-4593-be4d-2d657e59029b]: BUSY 
+[debug] [2020-05-09T13:41:07.060Z] [runtime-status] [9852] Functions runtime initialized. {"cwd":"D:\\Refferor\\referror\\functions","node_version":"12.16.2"} 
+[debug] [2020-05-09T13:41:07.068Z] [runtime-status] [9852] Disabled runtime features: undefined 
+[debug] [2020-05-09T13:41:07.076Z] [runtime-status] [9852] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:07.079Z] [runtime-status] [9852] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:07.082Z] [runtime-status] [9852] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-05-09T13:41:07.146Z] [runtime-status] [9852] Checked functions.config() {"config":{}} 
+[debug] [2020-05-09T13:41:07.147Z] [runtime-status] [9852] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:07.148Z] [runtime-status] [9852] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:07.149Z] [runtime-status] [9852] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-functions\\lib\\index.js"} 
+[debug] [2020-05-09T13:41:07.150Z] [runtime-status] [9852] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.12.1","resolution":"D:\\Refferor\\referror\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} 
+[warn] !  Error: Failed to parse private key: Error: Invalid PEM formatted message.
+    at FirebaseAppError.FirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at new ServiceAccount (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:142:19)
+    at new ServiceAccountCredential (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\auth\credential.js:68:15)
+    at Object.cert (D:\Refferor\referror\functions\node_modules\firebase-admin\lib\firebase-namespace.js:219:58)
+    at Object.<anonymous> (D:\Refferor\referror\functions\index.js:7:34)
+    at Module._compile (internal/modules/cjs/loader.js:1156:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+    at Module.load (internal/modules/cjs/loader.js:1000:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2020-05-09T13:41:07.243Z] [worker-~diagnostic~-1fc8aab3-1395-4593-be4d-2d657e59029b]: exited 
+[debug] [2020-05-09T13:41:07.244Z] [worker-~diagnostic~-1fc8aab3-1395-4593-be4d-2d657e59029b]: FINISHED 

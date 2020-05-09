@@ -11,3 +11,7 @@ export const askForPermissioToReceiveNotifications = async () => {
     console.error(error);
   }
 }
+
+messaging.onMessage(function (payload) {
+    console.log('ON_MESSAGE',payload)
+  })
