@@ -1,10 +1,10 @@
 
 
-import React, { useState, useEffect, Fragment } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import profile from "../../assets/images/profile.jpg";
-import { Card, Button, Form } from 'react-bootstrap';
+import { Card} from 'react-bootstrap';
 
 
 const ShowProfile = ({ isEdit, Userdata }) => {

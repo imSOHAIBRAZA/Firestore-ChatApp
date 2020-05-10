@@ -6,7 +6,6 @@ import { ROUTES } from "../utils/routes";
 import { store, persistor } from "../utils/store";
 import HomePage from "../pages/HomePage";
 import Logout from "../components/auth/Logout";
-// import "../App.scss";
 import { Container } from "react-bootstrap";
 import { PersistGate } from "redux-persist/integration/react";
 import SignInPage from "../pages/SignInPage";

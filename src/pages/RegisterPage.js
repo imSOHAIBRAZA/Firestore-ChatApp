@@ -5,11 +5,17 @@ import Register from "../components/auth/Register";
 class RegisterPage extends Component {
   render() {
     return (
-      <Row>
+      <Row className="sign-in-bg">
+      <Col
+        md={6}
+        className="sign-in-bg-image"
+       
+      > 
+      </Col>
         <Col
           md={6}
-          className="flex justify-content-center align-items-center vh-100"
-          style={{ float: "none", margin: "0 auto" }}
+          className="flex justify-content-center  vh-100"
+          // style={{ float: "none", margin: "0 auto" }}
         >
           <Register />
         </Col>

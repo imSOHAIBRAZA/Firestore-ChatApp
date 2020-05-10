@@ -1,0 +1,29 @@
+.sign-in-bg-image {
+    background-image: url(../images/WelcomeReferror.png);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sign-in-bg{
+    background-color: white;
+}
+
+.sign-in-form{
+    // padding: 60px 15px;
+    padding: 60px 15px 30px;
+    border-radius: 5px;
+    box-shadow: grey 0px 0px 10px;
+    margin-top: 30px;
+}
+.sign-in-btn{
+    border-radius: 20px !important;
+    margin-top: 50px !important;
+}
+.sign-in-info{
+    margin-top: 20px !important;
+    .signup-link{
+        text-decoration: none;
+    }
+
+}

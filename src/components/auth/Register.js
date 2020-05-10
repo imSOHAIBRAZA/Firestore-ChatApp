@@ -1,7 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, InputGroup, FormControl } from "react-bootstrap";
 import { registerUser } from "../../actions/authActions";
+import LogoReferror from '../../assets/images/Logo_Referror.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock, faUser, faPhone } from "@fortawesome/free-solid-svg-icons";
+
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -45,17 +50,25 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="w-50 h-50">
-        <h1>Register</h1>
+      <div className="w-50 text-center">
+        <img src={LogoReferror} alt="Refrror" style={{ height: '60px', marginTop: '10px' }} />
+        <h6>Sign up for Referror Account</h6>
+        <h5>web.referror.com</h5>
         {!this.state.registrationStatus ? (
           <Form
             noValidate
             validated={this.state.validated}
             onSubmit={this.handleSubmit}
+            className="sign-in-form"
           >
-            <Form.Group controlId="registerEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
+
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+                <InputGroup.Text id="basic-addon1" style={{ background: "white" }}>
+                  <FontAwesomeIcon icon={faUser} size={"1x"} />
+                </InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
                 type="email"
                 placeholder="Enter email"
                 required
@@ -63,23 +76,31 @@ class Register extends Component {
                 onChange={this.handleChange}
                 value={this.state.email}
               />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formBasicPhoneNumber">
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control
+            </InputGroup>
+
+
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+                <InputGroup.Text id="basic-addon1" style={{ background: "white" }}>
+                  <FontAwesomeIcon icon={faPhone} size={"1x"} />
+                </InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
                 type="text"
                 placeholder="Phone Number"
                 name="phoneNumber"
                 onChange={this.handleChange}
                 value={this.state.phoneNumber}
               />
-            </Form.Group>
-            <Form.Group controlId="registerName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
+            </InputGroup>
+
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+                <InputGroup.Text id="basic-addon1" style={{ background: "white" }}>
+                  <FontAwesomeIcon icon={faUser} size={"1x"} />
+                </InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
                 type="text"
                 placeholder="Enter name"
                 required
@@ -87,11 +108,15 @@ class Register extends Component {
                 onChange={this.handleChange}
                 value={this.state.name}
               />
-            </Form.Group>
+            </InputGroup>
 
-            <Form.Group controlId="registerPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+                <InputGroup.Text id="basic-addon1" style={{ background: "white" }}>
+                  <FontAwesomeIcon icon={faLock} size={"1x"} />
+                </InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
                 type="password"
                 placeholder="Password"
                 required
@@ -99,11 +124,16 @@ class Register extends Component {
                 onChange={this.handleChange}
                 value={this.state.password}
               />
-            </Form.Group>
+            </InputGroup>
 
-            <Form.Group controlId="registerConfirmPassword">
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control
+
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+                <InputGroup.Text id="basic-addon1" style={{ background: "white" }}>
+                  <FontAwesomeIcon icon={faLock} size={"1x"} />
+                </InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
                 type="password"
                 placeholder="Confirm Password"
                 required
@@ -111,14 +141,14 @@ class Register extends Component {
                 onChange={this.handleChange}
                 value={this.state.confirmPassword}
               />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
+            </InputGroup>
+            <Button variant="dark" type="submit" block className="sign-in-btn">
+              Sign up
             </Button>
           </Form>
         ) : (
-          <p>Please verify your email address</p>
-        )}
+            <p>Please verify your email address</p>
+          )}
       </div>
     );
   }
