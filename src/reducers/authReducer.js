@@ -60,6 +60,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
         ...state,
         uid: action.payload.uid,
         errorMessage: "",
+        email: action.payload.email,
         isLoginPending: false,
         name: action.payload.name
       };

@@ -77,6 +77,7 @@ class Contacts extends Component {
     };
 
     initiateChat = (userId) => {
+        debugger;
         const members = [this.props.uid, userId];
         const timestamp = firebase.firestore.FieldValue.serverTimestamp();
         db.collection("userChats").doc(this.props.uid).collection("chats").add({

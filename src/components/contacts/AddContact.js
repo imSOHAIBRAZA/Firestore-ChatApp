@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import "../../assets/scss/AddContact.scss"
 import ChatInputs from "../chat/ChatInputs";
-import {Button, Form, ListGroup} from "react-bootstrap";
-import {firestore as db} from "../../utils/firebase";
-import {connect} from "react-redux";
-import {addMessages, removeMessages} from "../../actions/threadActions";
-import {setActiveChat} from "../../actions/chatActions";
+import { Button, Form, ListGroup } from "react-bootstrap";
+import { firestore as db } from "../../utils/firebase";
+import { connect } from "react-redux";
+import { addMessages, removeMessages } from "../../actions/threadActions";
+import { setActiveChat } from "../../actions/chatActions";
 
 class AddContact extends Component {
 
@@ -19,50 +19,57 @@ class AddContact extends Component {
 
 
     handleChange = e => {
-        const {name, value} = e.target;
-        this.setState({[name]: value});
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
     };
 
 
     search = event => {
         event.preventDefault();
         event.stopPropagation();
-        this.setState({searchResult: []});
-        db.collection("users").where("email", "==", this.state.email)
-            .get()
-            .then((querySnapshot) => {
+        this.setState({ searchResult: [] });
+        if (this.props.auth.email !== this.state.email) {
+            db.collection("users").where("email", "==", this.state.email)
+                .get()
+                .then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        const { name, email } = doc.data();
+                        console.log("SEARCHED USED", name, email);
 
-                querySnapshot.forEach((doc) => {
-                    const {name, email} = doc.data();
-                    console.log(name, email);
+                        this.setState({
+                            searchResult: [...this.state.searchResult, {
+                                id: doc.id,
+                                name, email
+                            }]
+                        });
 
-                    this.setState({
-                        searchResult: [...this.state.searchResult, {
-                            id: doc.id,
-                            name, email
-                        }]
+                        console.log(doc.id, " => ", doc.data());
                     });
-
-                    console.log(doc.id, " => ", doc.data());
+                })
+                .catch(function (error) {
+                    console.log("Error getting documents: ", error);
                 });
-            })
-            .catch(function (error) {
-                console.log("Error getting documents: ", error);
-            });
+        }
     };
 
     addContact = (id) => {
 
-        const user = db.collection("users").doc(this.props.uid);
+        const user = db.collection("users").doc(this.props.auth.uid);
 
         user.get().then((doc) => {
 
             if (doc.data()) {
                 let contacts = doc.data().contacts || [];
-                contacts = [...contacts, id];
-                user.update({
-                    contacts
-                })
+                let isAlreadyFriend = contacts.find(uid => uid === id)
+                if (isAlreadyFriend) {
+                    console.log('ALREADY FRIEND')
+                }
+                else {
+                    contacts = [...contacts, id];
+                    user.update({
+                        contacts
+                    })
+                }
             } else {
                 user.set({
                     contacts: [id]
@@ -123,7 +130,7 @@ class AddContact extends Component {
 }
 
 const mapStateToProps = state => ({
-    uid: state.auth.uid,
+    auth: state.auth,
 
 });
 

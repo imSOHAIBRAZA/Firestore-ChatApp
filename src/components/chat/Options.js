@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import '../../assets/scss/Options.scss';
+import '../../assets/scss/ChatBubble.scss';
+
 import { Transition } from "react-transition-group";
 import { Form, FormCheck, Tab, Tabs, Image } from "react-bootstrap";
 import FileIcon, {defaultStyles} from 'react-file-icon';
