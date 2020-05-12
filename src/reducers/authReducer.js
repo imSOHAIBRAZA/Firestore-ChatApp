@@ -82,13 +82,17 @@ const authReducer = (state = INITIAL_STATE, action) => {
     }
 
     case LOGOUT_SUCCESS: {
-      return {
-        ...state,
-        uid: "",
-        errorMessage: "",
-        isLoginPending: false
-      };
+      return { };
     }
+
+    // case LOGOUT_SUCCESS: {
+    //   return {
+    //     ...state,
+    //     uid: "",
+    //     errorMessage: "",
+    //     isLoginPending: false
+    //   };
+    // }
 
     case LOGOUT_FAILED: {
       return {

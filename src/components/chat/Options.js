@@ -1,7 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import '../../assets/scss/Options.scss';
-import {Transition} from "react-transition-group";
-import {Form, FormCheck, Tab, Tabs} from "react-bootstrap";
+import { Transition } from "react-transition-group";
+import { Form, FormCheck, Tab, Tabs, Image } from "react-bootstrap";
+import FileIcon, {defaultStyles} from 'react-file-icon';
+
 
 const duration = 300;
 
@@ -12,10 +15,10 @@ const defaultStyle = {
 };
 
 const transitionStyles = {
-    entering: {width: 0},
-    entered: {width: '33.33%'},
-    exiting: {width: '33.33%'},
-    exited: {width: 0},
+    entering: { width: 0 },
+    entered: { width: '33.33%' },
+    exiting: { width: '33.33%' },
+    exited: { width: 0 },
 };
 
 class Options extends Component {
@@ -52,10 +55,31 @@ class Options extends Component {
                             <p className="accent-color font-weight-bold padding-15">Media</p>
                             <Tabs defaultActiveKey="profile" id="tabs">
                                 <Tab eventKey="photos" title="Photos">
-                                    photo grid
+                                    {
+                                        this.props.data && this.props.data.map((v, i) => {
+                                            if (v.message.type === 'image') {
+                                                return <Image src={v.message.data} className="" style={{ margin:'5px',height: '70px' }} />
+                                            }
+
+                                        })
+                                    }
+
                                 </Tab>
                                 <Tab eventKey="files" title="Files">
-                                    files
+                                {
+                                        this.props.data && this.props.data.map((v, i) => {
+                                            if (v.message.type === 'doc'){
+                                               return <Link download rel={v.message.filename} 
+                                                to={v.message.data} className="cursor-pointer text-decoration-none" >
+                                                 <FileIcon
+                                                     extension={v.message.extension} {...defaultStyles[v.message.extension]}  />
+                                                 <span
+                                                     className="padding-10">{v.message.filename && v.message.filename.length > 10 ? v.message.filename.substring(0, 10) + "..." : v.message.data.filename}
+                                                     </span>
+                                             </Link>
+                                            }
+                                        })
+                                    }
                                 </Tab>
                                 <Tab eventKey="links" title="Links">
                                     links

@@ -112,7 +112,8 @@ class ChatWindow extends Component {
                         </section>
                         <ChatInputs/>
                     </div>
-                    <Options in={this.state.optionsVisible}/>
+                    
+                    <Options in={this.state.optionsVisible} data={this.props.thread}/>
                 </section>
 
 

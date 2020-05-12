@@ -38,10 +38,15 @@ export function addChats(data) {
         for (const v of members) {
             if (auth.uid !== v) {
                 await db.collection("users").doc(v).get().then(doc => {
-                    const {name, email, uid} = doc.data();
-                    userInfo[uid] = {
-                        name, email
+                    let data = doc.data();
+                    if(data){
+                        const {name, email, uid} = data;
+                        
+                        userInfo[uid] = {
+                            name, email
+                        }
                     }
+                   
                 })
             }
         }

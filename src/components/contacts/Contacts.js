@@ -79,13 +79,20 @@ class Contacts extends Component {
     initiateChat = (userId) => {
         const members = [this.props.uid, userId];
         const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-        db.collection("userChats").doc(this.props.uid).collection("chats")
-
-            .add({
+        db.collection("userChats").doc(this.props.uid).collection("chats").add({
                 members,
                 timestamp
             }).then(doc => {
             const chatId = doc.id;
+
+            // db.collection("userChats").doc(userId).collection("chats").doc('L97sEJUdUxLyLAt9MXk8').set({
+            //     members,
+            //     timestamp
+            // })
+            //     .then(r => {
+            //         console.log("Chat Initiated", r);
+            //         this.loadMessageThread('L97sEJUdUxLyLAt9MXk8')
+            //     })
             db.collection("userChats").doc(userId).collection("chats").doc(chatId).set({
                 members,
                 timestamp
@@ -94,12 +101,16 @@ class Contacts extends Component {
                     console.log("Chat Initiated", r);
                     this.loadMessageThread(chatId)
                 })
-
-
         })
     };
 
     render() {
+            console.log('CONTACTS:', this.props.contacts);
+            console.log('CHAT:', this.props.chats);
+            console.log('NAV:', this.props.nav);
+            console.log('ID:', this.props.uid);
+
+            
         return (
             <div id="contacts" className="position-relative h-100">
                 <InputGroup className="mb-3 " id="contact-search">
@@ -120,7 +131,7 @@ class Contacts extends Component {
                     {this.props.nav === CONTACTS && this.props.contacts && this.props.contacts.map(v => {
                         return <UserInfo key={v.id} data={v} contact={true} click={() => this.initiateChat(v.id)}/>
                     })}
-
+        
                 </div>
 
                 <div id="new-chat-btn" className="flex align-items-center justify-content-center cursor-pointer"
