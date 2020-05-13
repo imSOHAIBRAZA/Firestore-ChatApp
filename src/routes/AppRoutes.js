@@ -11,6 +11,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import SignInPage from "../pages/SignInPage";
 import RegisterPage from "../pages/RegisterPage";
 import PrivateRoute from "./PrivateRoute"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import history from "../utils/history";
 
@@ -29,6 +31,8 @@ function AppRoutes() {
         <PersistGate loading={null} persistor={persistor}>
           <Router history={history}>
             <ErrorBoundary children={ret} />
+        <ToastContainer autoClose={8000} />
+
           </Router>
         </PersistGate>
       </Provider>

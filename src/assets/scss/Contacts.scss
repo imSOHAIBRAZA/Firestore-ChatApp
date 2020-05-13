@@ -25,6 +25,40 @@
     }
   }
 
+  .add-avatar{
+    background: #eb222b;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+  }
+  .add-info{
+    border-bottom: 1px solid #cccccc73;
+    color: #eb222b;
+    align-items: baseline;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-left: 8px solid #fff;
+  }
+  .request-badge{
+    margin-left: 20px;
+    background: #eb222b;
+    color: white;
+    padding: 0px 7px;
+    width: 24px;
+    height: 24px;
+    border-radius: 15px;
+  }
+
+  .add-info:hover{
+    border-left: 8px solid #eb222b;
+    background: #FCEFEF;
+  }
   #user-chats {
     overflow-y: scroll;
     height: 90%;

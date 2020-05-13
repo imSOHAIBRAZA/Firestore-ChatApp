@@ -4,6 +4,7 @@ import ChatInputs from "../chat/ChatInputs";
 import { Button, Form, ListGroup } from "react-bootstrap";
 import { firestore as db } from "../../utils/firebase";
 import { connect } from "react-redux";
+import { toast } from 'react-toastify';
 import { addMessages, removeMessages } from "../../actions/threadActions";
 import { setActiveChat } from "../../actions/chatActions";
 
@@ -62,9 +63,13 @@ class AddContact extends Component {
                 let contacts = doc.data().contacts || [];
                 let isAlreadyFriend = contacts.find(uid => uid === id)
                 if (isAlreadyFriend) {
-                    console.log('ALREADY FRIEND')
+                    toast.info("ALREADY FRIEND!", {
+                        position: toast.POSITION.TOP_RIGHT,
+                        autoClose: 2000
+                      });
                 }
                 else {
+                    // id mean jo frind add krna hy us ki id
                     contacts = [...contacts, id];
                     user.update({
                         contacts
