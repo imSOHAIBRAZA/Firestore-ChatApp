@@ -9,7 +9,7 @@ import { getUpdateProfile } from "../../actions/profileAction";
 
 
 const EditProfile = ({ isEdit, Userdata }) => {
-
+console.log("SOHAIB",Userdata)
   //** GET STATE & DISPATCH WITH STORE **//
   const dispatch = useDispatch();
   const { Auth } = useSelector(({ auth }) => ({
@@ -18,10 +18,10 @@ const EditProfile = ({ isEdit, Userdata }) => {
   
   const [data, setData] = useState({
     name: Userdata ? Userdata.name : '',
-    bio: Userdata ? Userdata.bio : '',
-    dob: Userdata ? Userdata.dob : '',
-    gender: Userdata ? Userdata.gender : '',
-    imagePath: Userdata ? Userdata.imagePath : ''
+    bio: Userdata.bio !== undefined ? Userdata.bio : '',
+    dob: Userdata.dob!== undefined ? Userdata.dob : '',
+    gender: Userdata.gender!== undefined ? Userdata.gender : '',
+    imagePath: Userdata.imagePath !== undefined ? Userdata.imagePath : ''
   });
 
   const [image, setImage] = useState({ preview: ""});
@@ -53,6 +53,7 @@ const EditProfile = ({ isEdit, Userdata }) => {
   }
 
   const updateProfile = () => {
+    // console.log('UPDATE PROFILE',data)
     dispatch(getUpdateProfile(data))
     // const userId = Auth.uid
     // var userRef = db.collection("users").doc(userId);

@@ -55,10 +55,12 @@
     border-radius: 15px;
   }
 
-  .add-info:hover{
+  .active,.add-info:hover{
     border-left: 8px solid #eb222b;
     background: #FCEFEF;
   }
+
+  
   #user-chats {
     overflow-y: scroll;
     height: 90%;

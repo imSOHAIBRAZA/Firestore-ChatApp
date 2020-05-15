@@ -32,7 +32,8 @@ class ChatInputs extends Component {
         if (e.keyCode === 13) {
             this.setState({input: ""});
             const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-            db.collection("chatMessages")
+            if(this.props.activeChat){
+                db.collection("chatMessages")
                 .doc(this.props.activeChat)
                 .collection("messages")
                 .add({
@@ -48,7 +49,9 @@ class ChatInputs extends Component {
                 })
                 .then(() => {
                     console.log("Document successfully written!");
-                });
+                }).catch(error=>console.log("ERROR",error))
+            }
+            
         }
     };
 
@@ -63,7 +66,8 @@ class ChatInputs extends Component {
         storage.child("/chats/" + file.name).put(event.target.files[0]).then((snapshot) => {
             snapshot.ref.getDownloadURL().then(value => {
                 const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-                db.collection("chatMessages")
+                if(this.props.activeChat){
+                    db.collection("chatMessages")
                     .doc(this.props.activeChat)
                     .collection("messages")
                     .add({
@@ -82,6 +86,8 @@ class ChatInputs extends Component {
                     .then(() => {
                         console.log("Document successfully written!");
                     });
+                }
+               
             });
             console.log('Uploaded a blob or file!');
         });

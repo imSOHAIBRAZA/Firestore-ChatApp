@@ -12,13 +12,31 @@
   .user-excerpt {
     margin: 0;
   }
-
+.btn{
+  margin-top: 15px;
+    height: 30px;
+    border-radius: 15px;
+}
   .user-avatar {
     background: green;
     border-radius: 50%;
     height: 60px;
     width: 60px;
     text-align: center;
+    color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+  }
+
+  .friendrequest-avatar {
+    background: rgb(1, 209, 236);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    font-weight: bold;
     color: #fff;
     align-items: center;
     display: flex;

@@ -35,10 +35,13 @@ class ChatWindow extends Component {
             if (active) {
                 const activeChat = this.props.chats.details.filter(v => v.id === active)[0];
                 let name = '';
-                Object.keys(activeChat.members)
+                if(activeChat.members){
+                    Object.keys(activeChat.members)
                     .forEach(v => {
                         name += activeChat.members[v].name
                     });
+                }
+               
 
                 this.setState({name: name})
 

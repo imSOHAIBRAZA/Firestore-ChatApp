@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../../assets/scss/Contacts.scss';
 import { FormControl, InputGroup } from "react-bootstrap";
 import MaterialIcon from "material-icons-react";
+import { toast } from 'react-toastify';
 import UserInfo from "./UserInfo";
+import FriendRequest from './FriendRequests';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentAlt } from "@fortawesome/free-regular-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
@@ -23,7 +25,8 @@ class Contacts extends Component {
         this.state = {
             activeChat: null,
             activeChatId: null,
-            friendsRequestList: false
+            friendsRequestList: false,
+            getfriendList: null
         }
 
     }
@@ -35,10 +38,11 @@ class Contacts extends Component {
     }
 
     componentDidMount() {
-
+        this.getFriendsList();
         db.collection("users").doc(this.props.uid)
             .onSnapshot((snapshot) => {
                 if (snapshot.data())
+                if(snapshot.data().contacts){
                     snapshot.data().contacts.forEach(v => {
                         db.collection("users").doc(v).get().then(doc => {
                             const { name, email } = doc.data();
@@ -48,10 +52,77 @@ class Contacts extends Component {
                             })
                         })
                     })
-
+                }
             }
             );
+
+
     }
+
+    //** GET FRIEND REQUEST LIST**//
+    getFriendsList = () => {
+        if (this.props.uid) {
+            const FriendRequstUser = db.collection("request").doc(this.props.uid);
+            FriendRequstUser.get().then((doc) => doc.data()).then((doc) => {
+                // debugger;
+                if (doc) {
+                    let friendList = doc.friendRequests || [];
+                    this.setState({ getfriendList: [] });
+                    friendList.forEach(v =>
+                        this.getUserData(v.id)
+
+                        // db.collection("users").doc(v.id).get()
+                        //     .then(doc => doc.data())
+                        //     .then((value) => {
+                        //         // let data = value;
+                        //         const { name } = value;
+
+                        //         this.setState({
+                        //             getfriendList: [...this.state.getfriendList, { name, id: v.id }]
+
+                        //         })
+                        //     })
+                    );
+
+                }
+            }
+
+            )}
+
+    }
+
+
+    //** **//
+    getUserData = (id)=>{
+        db.collection("users").doc(id).get()
+        .then(doc => doc.data())
+        .then((value) => {
+            // let data = value;
+            const { name } = value;
+
+            this.setState({
+                getfriendList: [...this.state.getfriendList, { name, id: id }]
+
+            })
+        })
+    }
+
+    // getFriendsList = async() => {
+    //     if (this.props.uid) {
+    //         const FriendRequstUser = db.collection("request").doc(this.props.uid);
+    //          let RequestSender = await (await FriendRequstUser.get()).data();
+    //          let RequestSenderId = RequestSender.frindRequests.map(async(v)=>{
+    //          let getRequestSender = await (await db.collection("users").doc(v.id).get()).data();
+
+    //          this.setState({
+    //             getfriendList: getRequestSender
+    //          })
+    //         });
+
+    //     }
+
+    // }
+
 
     loadMessageThread = (chatId) => {
 
@@ -65,22 +136,16 @@ class Contacts extends Component {
         this.props.removeMessages();
         const current = db.collection("chatMessages").doc(chatId).collection("messages").orderBy("timestamp")
             .onSnapshot((snapshot) => {
-
                 snapshot.docChanges().forEach((changes) => {
                     if (changes.type === "added") {
                         this.props.addMessages(changes.doc.data())
                     }
-
                 });
-
-
-            }
-            );
+            });
         this.setState({ activeChat: current })
     };
 
     initiateChat = (userId) => {
-        debugger;
         const members = [this.props.uid, userId];
         const timestamp = firebase.firestore.FieldValue.serverTimestamp();
         db.collection("userChats").doc(this.props.uid).collection("chats").add({
@@ -88,7 +153,6 @@ class Contacts extends Component {
             timestamp
         }).then(doc => {
             const chatId = doc.id;
-
             // db.collection("userChats").doc(userId).collection("chats").doc('L97sEJUdUxLyLAt9MXk8').set({
             //     members,
             //     timestamp
@@ -108,11 +172,182 @@ class Contacts extends Component {
         })
     };
 
+    // initiateChat = (userId) => {
+    //     const members = [this.props.uid, userId];
+    //     const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+    //     db.collection("userChats").doc(this.props.uid).collection("chats").add({
+    //         members,
+    //         timestamp
+    //     }).then(doc => {
+    //         const chatId = doc.id;
+
+    //         // db.collection("userChats").doc(userId).collection("chats").doc('L97sEJUdUxLyLAt9MXk8').set({
+    //         //     members,
+    //         //     timestamp
+    //         // })
+    //         //     .then(r => {
+    //         //         console.log("Chat Initiated", r);
+    //         //         this.loadMessageThread('L97sEJUdUxLyLAt9MXk8')
+    //         //     })
+    //         db.collection("userChats").doc(userId).collection("chats").doc(chatId).set({
+    //             members,
+    //             timestamp
+    //         })
+    //             .then(r => {
+    //                 console.log("Chat Initiated", r);
+    //                 this.loadMessageThread(chatId)
+    //             })
+    //     })
+    // };
+
+
+    //** ACCEPT FRIEND REQUEST **//
+    // addContact = (id) => {
+
+    //     const user = db.collection("users").doc(this.props.auth.uid);
+    //     // const FriendRequstUser = db.collection("request").doc(id);
+
+
+    //     user.get().then((doc) => {
+
+    //         if (doc.data()) {
+    //             let contacts = doc.data().contacts || [];
+    //             let isAlreadyFriend = contacts.find(uid => uid === id)
+    //             if (isAlreadyFriend) {
+    //                 toast.info("ALREADY FRIEND!", {
+    //                     position: toast.POSITION.TOP_RIGHT,
+    //                     autoClose: 2000
+    //                   });
+    //             }
+    //             else {
+    //                 // id mean jo frind add krna hy us ki id
+    //                 contacts = [...contacts, id];
+    //                 user.update({
+    //                     contacts
+    //                 })
+    //             }
+    //         } else {
+    //             user.set({
+    //                 contacts: [id]
+    //             })
+    //         }
+    //     })
+    // };
+    
+    //** ACCEPT FRIEND REQUEST **//
+    handlerOnAccept=(id)=>{
+        // this.freindRequestSender(id);
+        // this.freindRequestReceiver(id);
+        // this.friendListRequestUpdate(id);
+
+        const user = db.collection("users").doc(this.props.uid);
+        user.get().then(doc => doc.data())
+        .then(doc=>{
+            let contacts = doc.contacts || [];
+                let isAlreadyFriend = contacts.find(uid => uid === id)
+                if (isAlreadyFriend) {
+                    toast.info("ALREADY FRIEND!", {
+                        position: toast.POSITION.TOP_RIGHT,
+                        autoClose: 2000
+                      });
+                }
+                else {
+                    // id mean jo frind add krna hy us ki id
+                    this.freindRequestSender(id);
+                    this.freindRequestReceiver(id);
+                }
+        })
+
+
+    }
+
+friendListRequestUpdate=(id)=>{
+    
+        const FriendRequstUser = db.collection("request").doc(this.props.uid);
+        FriendRequstUser.get().then((doc) => doc.data())
+        .then(value=>{
+            let updatedList = value.friendRequests.filter(v=> v.id !==id);
+            
+
+            FriendRequstUser.update({
+                       friendRequests: updatedList
+                    });
+                   
+                    
+        })
+}
+
+
+freindRequestSender=(id)=>{
+    const user = db.collection("users").doc(this.props.uid);
+    user.get().then((doc) => {
+
+        if (doc.data()) {
+            let contacts = doc.data().contacts || [];
+            let isAlreadyFriend = contacts.find(uid => uid === id)
+            if (isAlreadyFriend) {
+                toast.info("ALREADY FRIEND!", {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000
+                  });
+            }
+            else {
+                // id mean jo frind add krna hy us ki id
+                contacts = [...contacts, id];
+                user.update({
+                    contacts
+                });
+                this.friendListRequestUpdate(id);
+
+            }
+        } else {
+            user.set({
+                contacts: [id]
+            })
+        this.friendListRequestUpdate(id);
+
+        }
+    });
+}
+
+            freindRequestReceiver=(id)=>{
+                const user = db.collection("users").doc(id);
+                user.get().then((doc) => {
+                    if (doc.data()) {
+                        let contacts = doc.data().contacts || [];
+                        let isAlreadyFriend = contacts.find(uid => uid === id)
+                        if (isAlreadyFriend) {
+                            toast.info("ALREADY FRIEND!", {
+                                position: toast.POSITION.TOP_RIGHT,
+                                autoClose: 2000
+                              });
+                        }
+                        else {
+                            // id mean jo frind add krna hy us ki id
+                            contacts = [...contacts, this.props.uid];
+                            user.update({
+                                contacts
+                            })
+                        }
+                    } else {
+                        user.set({
+                            contacts: [this.props.uid]
+                        })
+                    }
+                })
+            }
+//** REJECT FRIEND REQUEST **//
+    handlerOnReject=(id)=>{
+         this.friendListRequestUpdate(id);
+    }
+
     render() {
         console.log('CONTACTS:', this.props.contacts);
         console.log('CHAT:', this.props.chats);
         console.log('NAV:', this.props.nav);
         console.log('ID:', this.props.uid);
+
+        console.log('FRINED LIST:', this.state.getfriendList);
 
 
         return (
@@ -130,7 +365,7 @@ class Contacts extends Component {
 
                 {
                     this.props.nav === CONTACTS &&
-                    <div className="flex  add-info" onClick={() => this.setState({
+                    <div className={`flex  add-info ${this.state.friendsRequestList && 'active'}`} onClick={() => this.setState({
                         friendsRequestList: !this.state.friendsRequestList
                     })}>
                         <div className="add-avatar">
@@ -138,7 +373,7 @@ class Contacts extends Component {
                         </div>
                         <div className="flex flex-row  justify-content-center">
                             <p className="user-name1">Friends Requests</p>
-                            <p className="request-badge"> 8</p>
+                            <p className="request-badge">{this.state.getfriendList && this.state.getfriendList.length}</p>
                         </div>
                     </div>
                 }
@@ -152,7 +387,13 @@ class Contacts extends Component {
                             click={this.loadMessageThread} />
                     })}
                     {
-                        this.state.friendsRequestList === true ? "Friends List"
+                        this.props.nav === CONTACTS && this.state.friendsRequestList === true ?
+                            <Fragment>
+                                {this.state.getfriendList && this.state.getfriendList.map(v => {
+                                    return <FriendRequest key={v.id} data={v} onReject={this.handlerOnReject} onAccept={this.handlerOnAccept} />
+                                })
+                                }
+                            </Fragment>
                             :
                             (
                                 this.props.nav === CONTACTS && this.props.contacts && this.props.contacts.map(v => {

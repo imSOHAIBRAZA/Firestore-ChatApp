@@ -53,35 +53,75 @@ class AddContact extends Component {
         }
     };
 
-    addContact = (id) => {
+    sendFriendRequest = (id) => {
 
-        const user = db.collection("users").doc(this.props.auth.uid);
-
-        user.get().then((doc) => {
+        // YAHAN DOC MAIN ID ADD KRNI HY 
+        const FriendRequstUser = db.collection("request").doc(id);
+        
+        FriendRequstUser.get().then((doc) => {
 
             if (doc.data()) {
-                let contacts = doc.data().contacts || [];
-                let isAlreadyFriend = contacts.find(uid => uid === id)
+                let contacts = doc.data().friendRequests || [];
+                let isAlreadyFriend = contacts.find(uid =>uid.id === this.props.auth.uid )
+               
                 if (isAlreadyFriend) {
-                    toast.info("ALREADY FRIEND!", {
+                    toast.info("ALREADY SEND REQUEST!", {
                         position: toast.POSITION.TOP_RIGHT,
                         autoClose: 2000
                       });
                 }
                 else {
-                    // id mean jo frind add krna hy us ki id
-                    contacts = [...contacts, id];
-                    user.update({
-                        contacts
-                    })
+                    FriendRequstUser.update({
+                       friendRequests: [...contacts,{id:this.props.auth.uid}]
+                    });
+                    toast.success("SEND FRINED REQUEST!", {
+                        position: toast.POSITION.TOP_RIGHT,
+                        autoClose: 2000
+                      });
                 }
             } else {
-                user.set({
-                    contacts: [id]
+                FriendRequstUser.set({
+                    friendRequests: [{id:this.props.auth.uid}]
                 })
+                toast.success("SEND FRINED REQUEST!", {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000
+                  });
             }
         })
     };
+
+    // addContact = (id) => {
+
+    //     const user = db.collection("users").doc(this.props.auth.uid);
+    //     // const FriendRequstUser = db.collection("request").doc(id);
+
+
+    //     user.get().then((doc) => {
+
+    //         if (doc.data()) {
+    //             let contacts = doc.data().contacts || [];
+    //             let isAlreadyFriend = contacts.find(uid => uid === id)
+    //             if (isAlreadyFriend) {
+    //                 toast.info("ALREADY FRIEND!", {
+    //                     position: toast.POSITION.TOP_RIGHT,
+    //                     autoClose: 2000
+    //                   });
+    //             }
+    //             else {
+    //                 // id mean jo frind add krna hy us ki id
+    //                 contacts = [...contacts, id];
+    //                 user.update({
+    //                     contacts
+    //                 })
+    //             }
+    //         } else {
+    //             user.set({
+    //                 contacts: [id]
+    //             })
+    //         }
+    //     })
+    // };
 
 
     render() {
@@ -109,7 +149,7 @@ class AddContact extends Component {
 
                                     {this.state.searchResult.map(v => {
                                         return <ListGroup.Item key={v.id}>{v.name}<Button
-                                            onClick={() => this.addContact(v.id)}>+</Button></ListGroup.Item>
+                                            onClick={() => this.sendFriendRequest(v.id)}>+</Button></ListGroup.Item>
                                     })}
 
 

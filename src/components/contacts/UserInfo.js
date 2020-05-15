@@ -7,9 +7,9 @@ class UserInfo extends Component {
         let name = "";
 
         const {id} = this.props.data;
-
+        
         if (this.props.contact) {
-            name = this.props.data.name
+            name = this.props.data.name  
         } else {
             Object.keys(this.props.data.members)
                 .forEach(v => {
