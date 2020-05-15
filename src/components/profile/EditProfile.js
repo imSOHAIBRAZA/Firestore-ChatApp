@@ -1,9 +1,9 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { firestore as db, storage } from "../../utils/firebase";
-
+// import { Spinner } from 'reactstrap';
 import profile from "../../assets/images/profile.jpg";
-import { Card, Button, Form, Col } from 'react-bootstrap';
+import { Card, Button, Form, Col ,Spinner } from 'react-bootstrap';
 import { getItem } from "../../utils/localStorage";
 import { getUpdateProfile } from "../../actions/profileAction";
 
@@ -25,6 +25,7 @@ console.log("SOHAIB",Userdata)
   });
 
   const [image, setImage] = useState({ preview: ""});
+  const [imageLoader, setImageLoader] = useState(false)
 
 
 
@@ -39,10 +40,12 @@ console.log("SOHAIB",Userdata)
       setImage({
         preview: URL.createObjectURL(e.target.files[0]),
       });
-
+      setImageLoader(true);
       storage.child('/profile-image/' + e.target.files[0].name).put(e.target.files[0]).then(snapshot => {
-        snapshot.ref.getDownloadURL().then(value => {
+        
+          snapshot.ref.getDownloadURL().then(value => {
           setData({ imagePath: value })
+          setImageLoader(false)
           console.log("Image successfully upload!");
         })
           .catch(function (error) {
@@ -70,8 +73,10 @@ console.log("SOHAIB",Userdata)
 
   return (
     <>
+    
       <label htmlFor="upload-button">
-        {image.preview ? (
+      {imageLoader? <div className="profile-photo editPropile-photo"> <Spinner variant="danger" animation="grow" /></div>:(image.preview ? (
+          
           <img src={image.preview} className="profile-photo editPropile-photo" alt="Profile Image" />
         ) : (
             <>
@@ -79,7 +84,14 @@ console.log("SOHAIB",Userdata)
                 <img src={profile} alt="Profile Image" className="profile-photo editPropile-photo" />
               }
             </>
-          )}
+          ))
+      
+      
+      
+      
+      
+      }
+        
       </label>
       <input
         type="file"
