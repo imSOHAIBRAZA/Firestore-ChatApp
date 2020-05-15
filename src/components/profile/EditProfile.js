@@ -36,12 +36,13 @@ console.log("SOHAIB",Userdata)
   };
 
   const handleImageChange = e => {
+    const date = new Date(2018, 11)
     if (e.target.files.length) {
       setImage({
         preview: URL.createObjectURL(e.target.files[0]),
       });
       setImageLoader(true);
-      storage.child('/profile-image/' + e.target.files[0].name).put(e.target.files[0]).then(snapshot => {
+      storage.child('/profile-image/' + e.target.files[0].name+date).put(e.target.files[0]).then(snapshot => {
         
           snapshot.ref.getDownloadURL().then(value => {
           setData({ imagePath: value })
