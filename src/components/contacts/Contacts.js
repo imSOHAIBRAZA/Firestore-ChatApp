@@ -26,7 +26,7 @@ class Contacts extends Component {
             activeChat: null,
             activeChatId: null,
             friendsRequestList: false,
-            getfriendList: null
+            getfriendList: []
         }
 
     }
@@ -63,10 +63,10 @@ class Contacts extends Component {
     getFriendsList = () => {
         if (this.props.uid) {
             const FriendRequstUser = db.collection("request").doc(this.props.uid);
-            FriendRequstUser.get().then((doc) => doc.data()).then((doc) => {
+            FriendRequstUser.onSnapshot((doc) => {
                 // debugger;
-                if (doc) {
-                    let friendList = doc.friendRequests || [];
+                if (doc.data()) {
+                    let friendList = doc.data().friendRequests || [];
                     this.setState({ getfriendList: [] });
                     friendList.forEach(v =>
                         this.getUserData(v.id)
@@ -148,6 +148,7 @@ class Contacts extends Component {
     initiateChat = (userId) => {
         const members = [this.props.uid, userId];
         const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+        
         db.collection("userChats").doc(this.props.uid).collection("chats").add({
             members,
             timestamp
@@ -201,44 +202,9 @@ class Contacts extends Component {
     // };
 
 
-    //** ACCEPT FRIEND REQUEST **//
-    // addContact = (id) => {
-
-    //     const user = db.collection("users").doc(this.props.auth.uid);
-    //     // const FriendRequstUser = db.collection("request").doc(id);
-
-
-    //     user.get().then((doc) => {
-
-    //         if (doc.data()) {
-    //             let contacts = doc.data().contacts || [];
-    //             let isAlreadyFriend = contacts.find(uid => uid === id)
-    //             if (isAlreadyFriend) {
-    //                 toast.info("ALREADY FRIEND!", {
-    //                     position: toast.POSITION.TOP_RIGHT,
-    //                     autoClose: 2000
-    //                   });
-    //             }
-    //             else {
-    //                 // id mean jo frind add krna hy us ki id
-    //                 contacts = [...contacts, id];
-    //                 user.update({
-    //                     contacts
-    //                 })
-    //             }
-    //         } else {
-    //             user.set({
-    //                 contacts: [id]
-    //             })
-    //         }
-    //     })
-    // };
     
     //** ACCEPT FRIEND REQUEST **//
     handlerOnAccept=(id)=>{
-        // this.freindRequestSender(id);
-        // this.freindRequestReceiver(id);
-        // this.friendListRequestUpdate(id);
 
         const user = db.collection("users").doc(this.props.uid);
         user.get().then(doc => doc.data())
@@ -403,7 +369,7 @@ freindRequestSender=(id)=>{
                     {
                         this.props.nav === CONTACTS && this.state.friendsRequestList === true ?
                             <Fragment>
-                                {this.state.getfriendList.length}
+                                
                                 {this.state.getfriendList.length>0 && this.state.getfriendList.map(v => {
                                     return <FriendRequest key={v.id} data={v} onReject={this.handlerOnReject} onAccept={this.handlerOnAccept} />
                                 })
