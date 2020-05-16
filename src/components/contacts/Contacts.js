@@ -252,9 +252,9 @@ class Contacts extends Component {
                       });
                 }
                 else {
-                    // id mean jo frind add krna hy us ki id
                     this.freindRequestSender(id);
                     this.freindRequestReceiver(id);
+                    this.friendListRequestUpdate(id);
                 }
         })
 
@@ -264,15 +264,29 @@ class Contacts extends Component {
 friendListRequestUpdate=(id)=>{
     
         const FriendRequstUser = db.collection("request").doc(this.props.uid);
+        // this.setState({ friendRequests: [] });
+
         FriendRequstUser.get().then((doc) => doc.data())
         .then(value=>{
             let updatedList = value.friendRequests.filter(v=> v.id !==id);
-            
-
-            FriendRequstUser.update({
+            // debugger;
+            this.setState({ getfriendList: [] });
+             FriendRequstUser.update({
                        friendRequests: updatedList
                     });
-                   
+            updatedList.forEach(v =>
+            db.collection("users").doc(v.id).get()
+            .then(doc => doc.data())
+            .then((value) => {
+                // let data = value;
+                const { name } = value;
+    
+                this.setState({
+                    getfriendList: [...this.state.getfriendList, { name, id: v.id }]
+    
+                })
+            })
+            )
                     
         })
 }
@@ -389,7 +403,8 @@ freindRequestSender=(id)=>{
                     {
                         this.props.nav === CONTACTS && this.state.friendsRequestList === true ?
                             <Fragment>
-                                {this.state.getfriendList && this.state.getfriendList.map(v => {
+                                {this.state.getfriendList.length}
+                                {this.state.getfriendList.length>0 && this.state.getfriendList.map(v => {
                                     return <FriendRequest key={v.id} data={v} onReject={this.handlerOnReject} onAccept={this.handlerOnAccept} />
                                 })
                                 }
