@@ -76,7 +76,7 @@ export function loginUser(data) {
         if (res.user.emailVerified) {
 
           db.collection("users").doc(res.user.uid).get().then(value => {
-            // debugger;
+            
             dispatch({type: LOGIN_SUCCESS, payload: value.data()});
             
           });

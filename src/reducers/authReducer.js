@@ -62,7 +62,8 @@ const authReducer = (state = INITIAL_STATE, action) => {
         errorMessage: "",
         email: action.payload.email,
         isLoginPending: false,
-        name: action.payload.name
+        name: action.payload.name,
+        token:action.payload.token
       };
     }
 

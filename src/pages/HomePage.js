@@ -8,8 +8,8 @@ import {connect} from "react-redux";
 import AddContact from "../components/contacts/AddContact";
 import Notification from "../components/notification/Notification";
 import Profile from "../components/profile/Profile";
-import {askForPermissioToReceiveNotifications} from "../services/push-notification";
-import {messaging} from "../utils/firebase";
+import {askForPermissioToReceiveNotifications,saveMessagingDeviceToken} from "../services/push-notification";
+import {firestore as db ,messaging} from "../utils/firebase";
 
 
 import {CHAT} from "../types/nav";
@@ -18,7 +18,32 @@ import {CHAT} from "../types/nav";
 class HomePage extends Component {
     componentDidMount() {
         console.log(this.props.uid)
-        askForPermissioToReceiveNotifications()
+       askForPermissioToReceiveNotifications()
+       .then(token=> token).then(currentToken=>{
+        if (currentToken) {
+                  db.collection('users').doc(this.props.uid)
+                      .update({token: currentToken});
+                } else {
+                  // Need to request permissions to show notifications.
+                  askForPermissioToReceiveNotifications();
+                }
+
+       })
+   
+
+        //  saveMessagingDeviceToken=(currentToken,this.props.uid)=> {
+  
+        //     if (currentToken) {
+        //       console.log('Got FCM device token:', uid);
+        //       debugger
+        //       db.collection('fcmTokens').doc(currentToken)
+        //           // .set({uid: currentToken});
+        //     } else {
+        //       // Need to request permissions to show notifications.
+        //       askForPermissioToReceiveNotifications();
+        //     }
+          
+        // }
        
     }
 

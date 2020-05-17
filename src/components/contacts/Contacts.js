@@ -45,11 +45,14 @@ class Contacts extends Component {
                 if(snapshot.data().contacts){
                     snapshot.data().contacts.forEach(v => {
                         db.collection("users").doc(v).get().then(doc => {
-                            const { name, email } = doc.data();
+                            if(doc.data()){
+                                const { name, email } = doc.data();
                             this.props.addContact({
                                 id: v,
                                 name, email
                             })
+                            }
+                            
                         })
                     })
                 }

@@ -28,6 +28,39 @@ class ChatInputs extends Component {
         this.setState({[name]: value});
     };
 
+    sendMessage =(activeChat)=>{
+
+        if (activeChat) {
+            // const activeChat = this.props.chats.details.filter(v => v.sentBy.uid=== active)[0];
+            db.collection("users").doc(activeChat).get()
+            .then(doc => doc.data())
+            .then((value) => {
+                // let data = value;
+                const { token } = value;
+                // debugger;
+                let data = {
+                    token:token,
+                    title:"REFERROR ",
+                    message:"You have received a Message"
+                   }
+                    fetch('https://cors-anywhere.herokuapp.com/https://us-central1-refferor-79247.cloudfunctions.net/notification', {
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json'
+                          },
+                        body: JSON.stringify(data)
+                      }).then(function(response) {
+                        return response.json();
+                      }).then(function(data) {
+                        console.log('PUSH NOTIFACTION:', data);
+                      }).catch(error=>{
+                        console.log('PUSH NOTIFACTION ERROR', error)
+                      })
+            })
+        }
+       
+    }
+
     onSubmit = e => {
         if (e.keyCode === 13) {
             this.setState({input: ""});
@@ -51,6 +84,7 @@ class ChatInputs extends Component {
                     timestamp: timestamp
                 })
                 .then(() => {
+                    this.sendMessage(this.props.activeChat)
                     console.log("Document successfully written!");
                 }).catch(error=>console.log("ERROR",error))
             
