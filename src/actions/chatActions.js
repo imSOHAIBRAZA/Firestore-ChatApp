@@ -19,10 +19,10 @@ export function updateChats(data) {
 }
 
 export function addChats(data) {
-
+    // debugger;
     return async dispatch => {
 
-        const {members} = data;
+        // const {members} = data;
         const {auth} = store.getState();
 
         // members.forEach(v=>{
@@ -35,21 +35,22 @@ export function addChats(data) {
         // });
 
         const userInfo = {};
-        for (const v of members) {
-            if (auth.uid !== v) {
-                await db.collection("users").doc(v).get().then(doc => {
-                    let data = doc.data();
-                    if(data){
-                        const {name, email, uid} = data;
+        
+        // for (const v of members) {
+        //     if (auth.uid !== v) {
+        //         await db.collection("users").doc(v).get().then(doc => {
+        //             let data = doc.data();
+        //             if(data){
+        //                 const {name, email, uid} = data;
                         
-                        userInfo[uid] = {
-                            name, email
-                        }
-                    }
+        //                 userInfo[uid] = {
+        //                     name, email
+        //                 }
+        //             }
                    
-                })
-            }
-        }
+        //         })
+        //     }
+        // }
 
         dispatch(
             {

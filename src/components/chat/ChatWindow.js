@@ -31,19 +31,33 @@ class ChatWindow extends Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.chats !== this.props.chats) {
             const active = this.props.chats.activeChat;
-
+            
             if (active) {
-                const activeChat = this.props.chats.details.filter(v => v.id === active)[0];
-                let name = '';
-                if(activeChat.members){
-                    Object.keys(activeChat.members)
-                    .forEach(v => {
-                        name += activeChat.members[v].name
-                    });
-                }
-               
+                // const activeChat = this.props.chats.details.filter(v => v.sentBy.uid=== active)[0];
+                db.collection("users").doc(active).get()
+                .then(doc => doc.data())
+                .then((value) => {
+                    // let data = value;
+                    const { name } = value;
+                    // debugger;
+                    this.setState({name})
+                })
 
-                this.setState({name: name})
+                // let name = '';
+            // debugger
+
+                // if(activeChat.members){
+                //     Object.keys(activeChat.members)
+                //     .forEach(v => {
+                //         name += activeChat.members[v].name
+                //     });
+                // }
+            //    if(activeChat){
+                
+            //     this.setState({name: activeChat.sentBy.name})
+            //    }
+
+                // this.setState({name: name})
 
             }
 
@@ -55,9 +69,10 @@ class ChatWindow extends Component {
 
 
     componentDidMount() {
+        const groupChatId = this.props.uid <=this.props.activeChat  ?`${this.props.uid}-${this.props.activeChat}` :`${this.props.activeChat}-${this.props.uid}`
 
         //this.props.clearAll()
-        db.collection("userChats").doc(this.props.uid).collection("chats")
+        db.collection("chatMessages").doc(groupChatId).collection("messages")
             .onSnapshot((doc) => {
                 doc.docChanges().forEach((changes) => {
                     if (changes.type === "added") {
@@ -104,6 +119,7 @@ class ChatWindow extends Component {
                         <section className="padding-15 h-100 overflow-y-scroll" id="scroll"
                                  ref={instance => this.chatWindow = instance}>
                             {this.props.thread && this.props.thread.map((value, index) => {
+                                
                                 return <ChatBubble key={index}
                                                    user={value.sentBy.name}
                                                    direction={value.sentBy.uid === this.props.uid ? 'right' : 'left'}>

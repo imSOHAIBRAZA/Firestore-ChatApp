@@ -55,8 +55,6 @@ class Contacts extends Component {
                 }
             }
             );
-
-
     }
 
     //** GET FRIEND REQUEST LIST**//
@@ -125,7 +123,9 @@ class Contacts extends Component {
 
 
     loadMessageThread = (chatId) => {
-
+        // const groupChatId = chatId
+        // const groupChatId =  `${chatId}-${this.props.uid}`
+        const groupChatId = this.props.uid <=chatId  ?`${this.props.uid}-${chatId}` :`${chatId}-${this.props.uid}`
         this.props.goToChats();
         this.setState({ activeChatId: chatId });
 
@@ -134,9 +134,10 @@ class Contacts extends Component {
         }
         this.props.setActiveChat(chatId);
         this.props.removeMessages();
-        const current = db.collection("chatMessages").doc(chatId).collection("messages").orderBy("timestamp")
+        const current = db.collection("chatMessages").doc(groupChatId).collection(groupChatId).orderBy("timestamp")
             .onSnapshot((snapshot) => {
                 snapshot.docChanges().forEach((changes) => {
+                    
                     if (changes.type === "added") {
                         this.props.addMessages(changes.doc.data())
                     }
@@ -148,7 +149,7 @@ class Contacts extends Component {
     initiateChat = (userId) => {
         const members = [this.props.uid, userId];
         const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-        
+      
         db.collection("userChats").doc(this.props.uid).collection("chats").add({
             members,
             timestamp
@@ -362,10 +363,9 @@ freindRequestSender=(id)=>{
 
 
                 <div id="user-chats">
-                    {this.props.nav === CHAT && this.props.chats.details && this.props.chats.details.map(v => {
-                        return <UserInfo active={this.state.activeChatId === v.id} key={v.id} data={v}
-                            click={this.loadMessageThread} />
-                    })}
+                    {this.props.nav === CHAT && this.props.contacts && this.props.contacts.map(v => {
+                                    return <UserInfo key={v.id} data={v} active={this.state.activeChatId === v.id} contact={true} click={() => this.loadMessageThread(v.id)} />
+                                })}
                     {
                         this.props.nav === CONTACTS && this.state.friendsRequestList === true ?
                             <Fragment>
@@ -378,7 +378,7 @@ freindRequestSender=(id)=>{
                             :
                             (
                                 this.props.nav === CONTACTS && this.props.contacts && this.props.contacts.map(v => {
-                                    return <UserInfo key={v.id} data={v} contact={true} click={() => this.initiateChat(v.id)} />
+                                    return <UserInfo key={v.id} data={v} contact={true} click={() => this.loadMessageThread(v.id)} />
                                 })
                             )
                     }

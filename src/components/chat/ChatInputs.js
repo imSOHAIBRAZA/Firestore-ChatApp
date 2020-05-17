@@ -32,10 +32,13 @@ class ChatInputs extends Component {
         if (e.keyCode === 13) {
             this.setState({input: ""});
             const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-            if(this.props.activeChat){
+            const groupChatId = this.props.uid <=this.props.activeChat  ?`${this.props.uid}-${this.props.activeChat}` :`${this.props.activeChat}-${this.props.uid}`
+           
+            // const groupChatId =  `${this.props.activeChat}-${this.props.uid}`
+            
                 db.collection("chatMessages")
-                .doc(this.props.activeChat)
-                .collection("messages")
+                .doc(groupChatId)
+                .collection(groupChatId)
                 .add({
                     message: {
                         type: 'text',
@@ -50,13 +53,14 @@ class ChatInputs extends Component {
                 .then(() => {
                     console.log("Document successfully written!");
                 }).catch(error=>console.log("ERROR",error))
-            }
+            
             
         }
     };
 
     onChangeHandler = (event, type) => {
 
+        const groupChatId = this.props.uid <=this.props.activeChat  ?`${this.props.uid}-${this.props.activeChat}` :`${this.props.activeChat}-${this.props.uid}`
 
         const file = event.target.files[0];
         const filename = file.name.split(".");
@@ -68,8 +72,8 @@ class ChatInputs extends Component {
                 const timestamp = firebase.firestore.FieldValue.serverTimestamp();
                 if(this.props.activeChat){
                     db.collection("chatMessages")
-                    .doc(this.props.activeChat)
-                    .collection("messages")
+                    .doc(groupChatId)
+                    .collection(groupChatId)
                     .add({
                         message: {
                             type: type,

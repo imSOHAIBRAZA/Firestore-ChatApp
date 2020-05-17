@@ -60,7 +60,7 @@ class Options extends Component {
                                     {
                                         this.props.data && this.props.data.map((v, i) => {
                                             if (v.message.type === 'image') {
-                                                return <Image src={v.message.data} className="" style={{ margin:'5px',height: '70px' }} />
+                                                return <Image src={v.message.data} className="" style={{ margin:'5px',height: '70px',width: '70px' }} />
                                             }
 
                                         })
