@@ -63,6 +63,7 @@ const authReducer = (state = INITIAL_STATE, action) => {
         email: action.payload.email,
         isLoginPending: false,
         name: action.payload.name,
+        imagePath: action.payload.imagePath,
         token:action.payload.token
       };
     }

@@ -6,6 +6,9 @@ import { registerUser } from "../../actions/authActions";
 import LogoReferror from '../../assets/images/Logo_Referror.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faUser, faPhone } from "@fortawesome/free-solid-svg-icons";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css'; 
+
 
 class Register extends Component {
   constructor(props) {
@@ -79,19 +82,26 @@ class Register extends Component {
             </InputGroup>
 
 
-            <InputGroup className="mb-3">
-              <InputGroup.Prepend>
+            <InputGroup className="mb-3 text-left">
+              {/* <InputGroup.Prepend>
                 <InputGroup.Text id="basic-addon1" style={{ background: "white" }}>
                   <FontAwesomeIcon icon={faPhone} size={"1x"} />
                 </InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl
+              </InputGroup.Prepend> */}
+              {/* <FormControl
                 type="text"
                 placeholder="Phone Number"
                 name="phoneNumber"
                 onChange={this.handleChange}
                 value={this.state.phoneNumber}
-              />
+              /> */}
+
+<PhoneInput
+  country={'us'}
+  name="phoneNumber"
+  value={this.state.phoneNumber}
+  onChange={phone => this.setState({ phoneNumber:phone })}
+/>
             </InputGroup>
 
             <InputGroup className="mb-3">

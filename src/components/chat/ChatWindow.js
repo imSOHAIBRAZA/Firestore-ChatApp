@@ -119,7 +119,7 @@ class ChatWindow extends Component {
                         <section className="padding-15 h-100 overflow-y-scroll" id="scroll"
                                  ref={instance => this.chatWindow = instance}>
                             {this.props.thread && this.props.thread.map((value, index) => {
-                                
+                                debugger;
                                 return <ChatBubble key={index}
                                                    user={value.sentBy.name}
                                                    direction={value.sentBy.uid === this.props.uid ? 'right' : 'left'}>

@@ -30,13 +30,27 @@ class Navigation extends Component {
         <div>
           <Dropdown>
             <Dropdown.Toggle variant="transparent" id="dropdown-basic">
+              {this.props.imagePath? <Image
+                src={this.props.imagePath}
+                roundedCircle
+                className="w-100 shadow"
+              />:
               <Image
+              src={
+                "https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"
+              }
+              roundedCircle
+              className="w-100 shadow"
+            />
+            }
+              {/* <Image
                 src={
                   "https://cdn2.f-cdn.com/contestentries/1316431/24595406/5ae8a3f2e4e98_thumb900.jpg"
                 }
                 roundedCircle
                 className="w-100 shadow"
-              />{" "}
+              /> */}
+              {" "}
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
@@ -75,10 +89,29 @@ class Navigation extends Component {
           </div>
         </div>
         <div>
-          <div className="nav-icon">
+          {/* <div className="nav-icon">
+            <MaterialIcon icon="settings" size="40" />
+            <small>Settings</small>
+          </div> */}
+
+          <Dropdown>
+            <Dropdown.Toggle variant="transparent" id="dropdown-basic">
+            <div className="nav-icon">
             <MaterialIcon icon="settings" size="40" />
             <small>Settings</small>
           </div>
+              {" "}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={() => console.log('ABOUT REFERROR')}>About Referror</Dropdown.Item>
+              <Dropdown.Item href={ROUTES.logout}>Logout</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
+
+
+
         </div>
       </div>
     );
@@ -87,6 +120,7 @@ class Navigation extends Component {
 
 const mapStateToProps = state => ({
   uid: state.auth.uid,
+  imagePath: state.auth.imagePath,
   nav: state.nav.activePage
 });
 

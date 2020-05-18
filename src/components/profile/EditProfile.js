@@ -8,8 +8,8 @@ import { getItem } from "../../utils/localStorage";
 import { getUpdateProfile } from "../../actions/profileAction";
 
 
+
 const EditProfile = ({ isEdit, Userdata }) => {
-console.log("SOHAIB",Userdata)
   //** GET STATE & DISPATCH WITH STORE **//
   const dispatch = useDispatch();
   const { Auth } = useSelector(({ auth }) => ({
@@ -111,7 +111,7 @@ console.log("SOHAIB",Userdata)
             className="margin-tb-2" name="bio"
             value={bio} onChange={handleChange}
           />
-          <Form.Control size="sm" type="text" placeholder="Date of Birth"
+          <Form.Control size="sm" type="date" placeholder="Date of Birth"
             className="margin-tb-2" name="dob"
             value={dob} onChange={handleChange}
           />

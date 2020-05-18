@@ -143,6 +143,7 @@ class ChatInputs extends Component {
 
                     <FormControl
                         type="text"
+                        disabled ={!this.props.activeChat?true:false}
                         placeholder="Message"
                         name="input"
                         onChange={this.handleChange}

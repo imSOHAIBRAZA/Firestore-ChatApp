@@ -381,7 +381,7 @@ freindRequestSender=(id)=>{
                             :
                             (
                                 this.props.nav === CONTACTS && this.props.contacts && this.props.contacts.map(v => {
-                                    return <UserInfo key={v.id} data={v} contact={true} click={() => this.loadMessageThread(v.id)} />
+                                    return <UserInfo key={v.id} active={this.state.activeChatId === v.id} data={v} contact={true} click={() => this.loadMessageThread(v.id)} />
                                 })
                             )
                     }
