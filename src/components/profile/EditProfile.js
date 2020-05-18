@@ -6,7 +6,7 @@ import profile from "../../assets/images/profile.jpg";
 import { Card, Button, Form, Col ,Spinner } from 'react-bootstrap';
 import { getItem } from "../../utils/localStorage";
 import { getUpdateProfile } from "../../actions/profileAction";
-
+import { toast } from 'react-toastify';
 
 
 const EditProfile = ({ isEdit, Userdata }) => {
@@ -59,6 +59,10 @@ const EditProfile = ({ isEdit, Userdata }) => {
   const updateProfile = () => {
     // console.log('UPDATE PROFILE',data)
     dispatch(getUpdateProfile(data))
+    toast.success("Profile Updated !", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000
+    });
     // const userId = Auth.uid
     // var userRef = db.collection("users").doc(userId);
     // return userRef.update(data)

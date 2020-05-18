@@ -26,7 +26,8 @@ class Contacts extends Component {
             activeChat: null,
             activeChatId: null,
             friendsRequestList: false,
-            getfriendList: []
+            getfriendList: [],
+            activeUserData:[]
         }
 
     }
@@ -102,7 +103,9 @@ class Contacts extends Component {
             const { name } = value;
 
             this.setState({
-                getfriendList: [...this.state.getfriendList, { name, id: id }]
+                getfriendList: [...this.state.getfriendList, { name, id: id }],
+                
+
 
             })
         })

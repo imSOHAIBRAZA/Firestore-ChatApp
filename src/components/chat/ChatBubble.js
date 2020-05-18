@@ -5,13 +5,23 @@ import {Image} from "react-bootstrap";
 import FileIcon, {defaultStyles} from 'react-file-icon';
 
 class ChatBubble extends Component {
+    
     render() {
+        console.log('BUBBLE', this.props.user)
         return (
             <div className={classNames('flex', 'w-100', 'chat-bubble-wrapper', {
                 'justify-content-start': this.props.direction === 'left',
                 'justify-content-end': this.props.direction === 'right'
             })}>
-                <div className='user-avatar'>{this.props.user ? this.props.user.charAt(0).toUpperCase() : ""}</div>
+
+
+               
+                <div className='user-avatar'>
+                {this.props.userData.name ===this.props.user &&this.props.userData.imagePath?
+                 <Image src={this.props.userData.imagePath} roundedCircle className="w-100 shadow" style={{height:'100%'}} />
+                 :(this.props.user ? this.props.user.charAt(0).toUpperCase() : "")
+                }
+                </div>
                 <div className="chat-bubble">
                     {this.props.children.type === 'text' ? this.props.children.data :
                         this.props.children.type === 'image' ?

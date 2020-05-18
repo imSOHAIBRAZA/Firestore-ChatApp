@@ -27,7 +27,7 @@ class Options extends Component {
 
 
     render() {
-        console.log('OPTION DATA', this.props.data)
+        console.log('OPTION DATA', this.props.userData)
         return (
             <Transition in={this.props.in} timeout={0}>
 
@@ -41,7 +41,15 @@ class Options extends Component {
                             <p className="accent-color font-weight-bold">Options</p>
                             <div className="flex align-items-center justify-content-center flex-column">
                                 <div className="user-avatar">
-                                {this.props.data.length>0 && this.props.data[0].sentBy && this.props.data[0].sentBy.name.charAt(0)}
+                                    {
+                                    this.props.userData&&this.props.userData.imagePath?
+                                    <Image src={this.props.userData.imagePath} roundedCircle className="w-100 shadow" style={{height:'100%'}} />
+                                :
+                                        (
+                                            this.props.data.length>0 && this.props.data[0].sentBy && this.props.data[0].sentBy.name.charAt(0)
+                                        )
+                                }
+                                
                                  </div>
                                 <p className="margin-0 cursor-arrow">
                                     {this.props.data.length>0 && this.props.data[0].sentBy && this.props.data[0].sentBy.name}
