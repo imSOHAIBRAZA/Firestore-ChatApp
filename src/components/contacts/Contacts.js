@@ -27,7 +27,8 @@ class Contacts extends Component {
             activeChatId: null,
             friendsRequestList: false,
             getfriendList: [],
-            activeUserData:[]
+            activeUserData:[],
+            search: ''
         }
 
     }
@@ -328,6 +329,20 @@ freindRequestSender=(id)=>{
          this.friendListRequestUpdate(id);
     }
 
+    filterFriends=()=>{
+        const data = this.props.contacts && this.props.contacts.filter(m => {
+           const fr = m.name.toLowerCase().includes(this.state.search.toLowerCase());
+           return fr
+       }).map((v, index) => {
+           return <UserInfo key={v.id} data={v} active={this.state.activeChatId === v.id} contact={true} click={() => this.loadMessageThread(v.id)} />
+       });
+       return data;
+   }
+
+//    this.props.contacts && this.props.contacts.map(v => {
+//     return <UserInfo key={v.id} data={v} active={this.state.activeChatId === v.id} contact={true} click={() => this.loadMessageThread(v.id)} />
+// })
+
     render() {
         console.log('CONTACTS:', this.props.contacts);
         console.log('CHAT:', this.props.chats);
@@ -345,7 +360,12 @@ freindRequestSender=(id)=>{
                         <InputGroup.Text id="basic-addon1"><MaterialIcon icon="search" size='30' /></InputGroup.Text>
                     </InputGroup.Prepend>
                     <FormControl
-                        placeholder="Search friends, message or phone number"
+                        placeholder="Search friends"
+                        type="text"
+                        name="search"
+                        value={this.state.search}
+                        onChange={e => this.setState({ search: e.target.value })}
+
                     />
 
                 </InputGroup>
@@ -369,9 +389,8 @@ freindRequestSender=(id)=>{
 
 
                 <div id="user-chats">
-                    {this.props.nav === CHAT && this.props.contacts && this.props.contacts.map(v => {
-                                    return <UserInfo key={v.id} data={v} active={this.state.activeChatId === v.id} contact={true} click={() => this.loadMessageThread(v.id)} />
-                                })}
+                    {this.props.nav === CHAT && this.filterFriends()
+                                }
                     {
                         this.props.nav === CONTACTS && this.state.friendsRequestList === true ?
                             <Fragment>
@@ -383,9 +402,7 @@ freindRequestSender=(id)=>{
                             </Fragment>
                             :
                             (
-                                this.props.nav === CONTACTS && this.props.contacts && this.props.contacts.map(v => {
-                                    return <UserInfo key={v.id} active={this.state.activeChatId === v.id} data={v} contact={true} click={() => this.loadMessageThread(v.id)} />
-                                })
+                                this.props.nav === CONTACTS && this.filterFriends()
                             )
                     }
 
