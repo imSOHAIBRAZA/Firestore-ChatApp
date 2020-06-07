@@ -34,6 +34,7 @@ class Navigation extends Component {
                 src={this.props.imagePath}
                 roundedCircle
                 className="w-100 shadow"
+                style={{height:"100%"}}
               />:
               <Image
               src={

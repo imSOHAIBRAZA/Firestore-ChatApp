@@ -26,4 +26,22 @@
     color: $accent-color;
     cursor: pointer;
   }
+
+
 }
+  .dialButton{
+    margin: 10px !important;
+    border-radius: 50% !important;
+  } 
+
+  .dialModal{
+    height:70vh !important
+  }
+
+  .receiveBtn{
+        border: none;
+    background-color: #00BCD4;
+    padding: 3px 10px;
+    margin-left: 5px;
+    color: white;
+  }
