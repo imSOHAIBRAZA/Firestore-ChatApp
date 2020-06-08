@@ -6,12 +6,14 @@ import { firestore as db, storage } from "./firebase";
   //   {'urls': 'stun:stun.services.mozilla.com'}, {'urls': 'stun:stun.l.google.com:19302'}, 
   // {'urls': 'turn:numb.viagenie.ca','credential': 'beaver','username': 'webrtc.websitebeaver@gmail.com'}
   // ]};
+
+  // http://numb.viagenie.ca/
   const configuration = {
     iceServers: [
       { urls:'stun:stun4.l.google.com:19302'},
       { urls: 'turn:numb.viagenie.ca',
-      username: 'sohaibraza789@gmail.com',
-      credential: 's03316095789' // add password
+      username: 'referror@gmail.com',
+      credential: '123456789' // add password
     },
       
     ],
@@ -260,6 +262,7 @@ import { firestore as db, storage } from "./firebase";
   
     peerConnection.addEventListener('connectionstatechange', () => {
       console.log(`Connection state change: ${peerConnection.connectionState}`);
+      return peerConnection.connectionState
     });
   
     peerConnection.addEventListener('signalingstatechange', () => {
