@@ -17,18 +17,6 @@ import { connect } from "react-redux";
 import firebase from "firebase/app";
 
 
-const configuration = {
-  iceServers: [
-    { urls: 'stun:stun4.l.google.com:19302' },
-    {
-      urls: 'turn:numb.viagenie.ca',
-      username: 'sohaibraza789@gmail.com',
-      credential: 's03316095789' // add password
-    },
-
-  ],
-  iceCandidatePoolSize: 10,
-};
 
 class ChatInputs extends Component {
   constructor(props) {
@@ -46,12 +34,6 @@ class ChatInputs extends Component {
       notification: ''
     };
 
-    this.attachment = React.createRef();
-    this.image = React.createRef();
-    this.peerConnection = React.createRef();
-    this.localStream = React.createRef()
-    this.remoteStream = React.createRef()
-    this.videoRef = React.createRef()
   }
 
   

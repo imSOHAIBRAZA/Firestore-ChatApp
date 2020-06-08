@@ -199,7 +199,7 @@ import { firestore as db, storage } from "./firebase";
   
   export const openUserMedia=async(e)=> {
     const stream = await navigator.mediaDevices.getUserMedia(
-        {video: true, audio: true});
+        {video: false, audio: true});
     // document.querySelector('#localVideo').srcObject = stream;
     localStream = stream;
     remoteStream = new MediaStream();

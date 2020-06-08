@@ -104,11 +104,13 @@ class ChatWindow extends Component {
     message=()=>{
          const data = this.props.thread && this.props.thread.filter(m => {
             const msg = m.message.data.toLowerCase().includes(this.state.search.toLowerCase());
+            // debugger;
             return msg
         }).map((value, index) => {
             return <ChatBubble key={index}
                 userData={this.state.activeUserData}
                 user={value.sentBy.name}
+                time={value.timestamp}
                 direction={value.sentBy.uid === this.props.uid ? 'right' : 'left'}>
                 {value.message}
             </ChatBubble>

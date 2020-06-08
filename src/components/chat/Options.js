@@ -6,6 +6,7 @@ import '../../assets/scss/ChatBubble.scss';
 import { Transition } from "react-transition-group";
 import { Form, FormCheck, Tab, Tabs, Image } from "react-bootstrap";
 import FileIcon, {defaultStyles} from 'react-file-icon';
+import Linkify from 'react-linkify';
 
 
 const duration = 300;
@@ -97,7 +98,19 @@ class Options extends Component {
                                     }
                                 </Tab>
                                 <Tab eventKey="links" title="Links">
-                                    links
+                                {
+                                        this.props.data && this.props.data.map((v, i) => {
+                                            const val = v.message.data.slice(0,3)
+                                            // debugger;
+                                            if (val === 'htt' || val === 'www' ) {
+                                                
+                                            return <Linkify><p style={{marginLeft:'10px'}}>{v.message.data}</p></Linkify>
+                                                // <Image src={v.message.data} className="" style={{ margin:'5px',height: '70px',width: '70px' }} />
+                                            
+                                            }
+
+                                        })
+                                    }
                                 </Tab>
                             </Tabs>
 

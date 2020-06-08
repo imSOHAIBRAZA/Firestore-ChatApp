@@ -3,6 +3,7 @@ import '../../assets/scss/ChatBubble.scss';
 import classNames from 'classnames';
 import {Image} from "react-bootstrap";
 import FileIcon, {defaultStyles} from 'react-file-icon';
+import Linkify from 'react-linkify';
 
 class ChatBubble extends Component {
     
@@ -22,12 +23,16 @@ class ChatBubble extends Component {
                  :(this.props.user ? this.props.user.charAt(0).toUpperCase() : "")
                 }
                 </div>
+              
                 <div className="chat-bubble">
-                    {this.props.children.type === 'text' ? this.props.children.data :
+                    {/* <p>{this.props.time.seconds}</p> */}
+                   {/* {const utcDate1 = new Date(Date.UTC(this.props.time.seconds));} */}
+                 {console.log('TIME',this.props.time.toDate())}
+                    {this.props.children.type === 'text' ? <Linkify>{this.props.children.data }</Linkify> :
                         this.props.children.type === 'image' ?
                             <div className="img">
                                 <Image src={this.props.children.data} className=""/>
-                                <a className="btn btn-sm btn-danger" href={this.props.children.data}
+                                <a rel={this.props.children.data}  className="btn btn-sm btn-danger" href={this.props.children.data} download 
                                    target="_blank">Download</a>
                             </div>
 
@@ -42,6 +47,9 @@ class ChatBubble extends Component {
                     }
 
                 </div>
+                <p style={{top: '-4px',fontSize: '10px',color: '#6c757d',padding: '0px 34px',position: 'absolute'}}>
+                    {this.props.time.toDate().toString().slice(0,21)}
+                </p>
             </div>
 
         );
