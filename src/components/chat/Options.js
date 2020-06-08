@@ -56,11 +56,11 @@ class Options extends Component {
                                     {this.props.data.length>0 && this.props.data[0].sentBy && this.props.data[0].sentBy.name}
                                 </p>
                                 <span>
-                                    <FormCheck
+                                    {/* <FormCheck
                                         type="switch"
                                         label="Mute notifications"
                                         id="custom-switch"
-                                    />
+                                    /> */}
 
                                 </span>
                             </div>
