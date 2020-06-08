@@ -27,7 +27,7 @@ class ChatBubble extends Component {
                 <div className="chat-bubble">
                     {/* <p>{this.props.time.seconds}</p> */}
                    {/* {const utcDate1 = new Date(Date.UTC(this.props.time.seconds));} */}
-                 {console.log('TIME',this.props.time.toDate())}
+                 {/* {console.log('TIME',this.props.time.toDate())} */}
                     {this.props.children.type === 'text' ? <Linkify>{this.props.children.data }</Linkify> :
                         this.props.children.type === 'image' ?
                             <div className="img">
@@ -48,7 +48,7 @@ class ChatBubble extends Component {
 
                 </div>
                 <p style={{top: '-4px',fontSize: '10px',color: '#6c757d',padding: '0px 34px',position: 'absolute'}}>
-                    {this.props.time.toDate().toString().slice(0,21)}
+                    {this.props.time&&this.props.time.toDate().toString().slice(0,21)}
                 </p>
             </div>
 

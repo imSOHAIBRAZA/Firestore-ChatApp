@@ -200,10 +200,10 @@ import { firestore as db, storage } from "./firebase";
   export const openUserMedia=async(e)=> {
     const stream = await navigator.mediaDevices.getUserMedia(
         {video: false, audio: true});
-    // document.querySelector('#localVideo').srcObject = stream;
+    document.querySelector('#localVideo').srcObject = stream;
     localStream = stream;
     remoteStream = new MediaStream();
-    // document.querySelector('#remoteVideo').srcObject = remoteStream;
+    document.querySelector('#remoteVideo').srcObject = remoteStream;
   
     console.log('Stream:', localStream);
     // document.querySelector('#cameraBtn').disabled = true;

@@ -169,6 +169,7 @@ class ChatInputs extends Component {
 
 createRoomHandler=async()=>{
     const roomId = await createRoom();
+    debugger;
     const groupChatId = this.props.uid <= this.props.activeChat ? `${this.props.uid}-${this.props.activeChat}` : `${this.props.activeChat}-${this.props.uid}`
     const timestamp = firebase.firestore.FieldValue.serverTimestamp();
     // const groupChatId =  `${this.props.activeChat}-${this.props.uid}`
