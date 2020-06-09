@@ -214,7 +214,8 @@ createRoomHandler=async()=>{
           <FontAwesomeIcon icon={faSmileBeam} />
 
           <FormControl
-            type="text"
+          as="textarea" rows="1"
+            // type="text"
             disabled={!this.props.activeChat ? true : false}
             placeholder="Message"
             name="input"
@@ -222,10 +223,13 @@ createRoomHandler=async()=>{
             value={this.state.input}
             onKeyUp={this.onSubmit}
           />
-
-          <FontAwesomeIcon icon={faPaperclip} onClick={() => this.attachment.click()} />
+{!this.props.activeChat ? '' : <>
+  <FontAwesomeIcon icon={faPaperclip} onClick={() => this.attachment.click()} />
           <FontAwesomeIcon icon={faPhone} onClick={()=>this.openMedia()} />
           <FontAwesomeIcon icon={faCamera} onClick={() => this.image.click()} />
+</>
+}
+          
 
 
         </section>
