@@ -37,11 +37,11 @@ class VoiceRecorder extends React.Component {
         const blobURL = URL.createObjectURL(blob)
         
         this.setState({ blobURL, isRecording: false });
-        // this.sendVoiceMessage(blobURL);
+        this.sendVoiceMessage(blob,blobURL);
       }).catch((e) => console.log(e));
   };
 
-  sendVoiceMessage=(data)=>{
+  sendVoiceMessage=(data,blobURL)=>{
     const groupChatId = this.props.uid <= this.props.activeChat ? `${this.props.uid}-${this.props.activeChat}` : `${this.props.activeChat}-${this.props.uid}`
 
     // const file = event.target.files[0];
@@ -52,7 +52,7 @@ class VoiceRecorder extends React.Component {
     storage.child("/chats/" + timestamp).put(data).then((snapshot) => {
       snapshot.ref.getDownloadURL().then(value => {
         // const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-        debugger;
+        // debugger;
         if (this.props.activeChat) {
           db.collection("chatMessages")
             .doc(groupChatId)
@@ -61,8 +61,8 @@ class VoiceRecorder extends React.Component {
               message: {
                 type: 'audio',
                 data: value,
-                // extension: ext,
-                // filename: filename[0]
+                extension: 'mp3',
+                filename: blobURL
               },
               sentBy: {
                 uid: this.props.uid,

@@ -117,7 +117,7 @@ class ChatInputs extends Component {
     const file = event.target.files[0];
     const filename = file.name.split(".");
     const ext = filename[filename.length - 1];
-
+debugger;
     console.log(ext);
     storage.child("/chats/" + file.name).put(event.target.files[0]).then((snapshot) => {
       snapshot.ref.getDownloadURL().then(value => {
