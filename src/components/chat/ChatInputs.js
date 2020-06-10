@@ -15,6 +15,7 @@ import { firestore as db, storage } from "../../utils/firebase";
 import {openUserMedia,createRoom,joinRoomById,hangUp} from "../../utils/webRtcCall";
 import { connect } from "react-redux";
 import firebase from "firebase/app";
+import VoiceRecorder from "../voiceRecorder/voiceRecorder"
 
 
 
@@ -24,6 +25,7 @@ class ChatInputs extends Component {
     this.state = {
       input: "",
       show: false,
+
       // localStream: null,
       // remoteStream: null,
       // peerConnection: null,
@@ -159,11 +161,13 @@ class ChatInputs extends Component {
   }
 
   openMedia=()=>{
-    openUserMedia()
+    // openUserMedia()
     this.setState({
       show: true
       })
   }
+
+ 
 
  
 
@@ -225,7 +229,7 @@ createRoomHandler=async()=>{
           />
 {!this.props.activeChat ? '' : <>
   <FontAwesomeIcon icon={faPaperclip} onClick={() => this.attachment.click()} />
-          <FontAwesomeIcon icon={faPhone} onClick={()=>this.openMedia()} />
+          <FontAwesomeIcon icon={faMicrophone} onClick={()=>this.openMedia()} />
           <FontAwesomeIcon icon={faCamera} onClick={() => this.image.click()} />
 </>
 }
@@ -256,40 +260,7 @@ createRoomHandler=async()=>{
             {/* <Modal.Title>Modal title</Modal.Title> */}
           </Modal.Header>
           <Modal.Body>
-            <Container className="dialModal">
-              <Row>
-                <Col sm={6} md={{ offset: 4 }}>
-                  <Button variant="secondary" onClick={()=>this.createRoomHandler()} className="dialButton" variant="success" size="lg" >
-                    <FontAwesomeIcon icon={faPhone} />
-                  </Button>
-                  {/* </Col> */}
-                  {/* <Col sm={6} md={ 3}> */}
-                  <Button variant="secondary" onClick={() => this.setState({ showCallId: !this.state.showCallId })} className="dialButton" style={{ color: 'white' }} variant="warning" size="lg" >
-                    <FontAwesomeIcon icon={faUserPlus} />
-                  </Button>
-                  {/* </Col> */}
-                  {/* <Col sm={6} md={2}> */}
-                  <Button variant="primary" onClick={this.hangUpHandler} className="dialButton" variant="danger" size="lg">
-                    <FontAwesomeIcon icon={faPhoneSlash} />
-                  </Button>
-                </Col>
-              </Row>
-
-              <Row>
-                <Col sm={6} md={{ offset: 4 }}>
-                  {this.state.showCallId &&
-                    <>
-                      <input type="text" value={this.state.callId} onChange={(e) => this.setState({ callId: e.target.value })} />
-                      <button className="receiveBtn" onClick={() => this.joinRoomHandler()}>Receive</button>
-                    </>
-
-                  }
-
-                  {this.state.notification ? <h3>{this.state.notification}</h3> : ''}
-                
-                </Col>
-              </Row>
-            </Container>
+          <VoiceRecorder/>
 
           </Modal.Body>
         </Modal>

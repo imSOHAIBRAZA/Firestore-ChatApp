@@ -6,11 +6,15 @@ import ChatInputs from "./ChatInputs";
 import Options from "./Options";
 import { firestore as db } from "../../utils/firebase";
 import { connect } from "react-redux";
-import { FormControl, InputGroup } from "react-bootstrap";
-
+import { FormControl, InputGroup,Modal,Button, Container, Row, Col  } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {openUserMedia,createRoom,joinRoomById,hangUp} from "../../utils/webRtcCall";
 import { addChats, clearAll, removeChats } from "../../actions/chatActions";
 import { animateScroll } from "react-scroll";
-
+import firebase from "firebase/app";
+import {faPhone,
+    faPhoneSlash,
+    faUserPlus} from "@fortawesome/free-solid-svg-icons";
 class ChatWindow extends Component {
 
     constructor(props) {
@@ -19,7 +23,13 @@ class ChatWindow extends Component {
             optionsVisible: false,
             name: null,
             activeUserData: '',
-            search: ''
+            search: '',
+            show: false,
+      roomDialog: null,
+      roomId: null,
+      callId: '',
+      showCallId: false,
+      notification: ''
 
         }
     }
@@ -118,6 +128,62 @@ class ChatWindow extends Component {
         return data;
     }
 
+
+    
+  //** OFF CALL **//
+  hangUpHandler = () => {
+    hangUp()
+  }
+
+  handleClose = () => {
+    this.setState({ show: false })
+  }
+
+  openMedia=()=>{
+    openUserMedia()
+    this.setState({
+      show: true
+      })
+  }
+
+ 
+
+ 
+
+createRoomHandler=async()=>{
+    const roomId = await createRoom();
+    
+    const groupChatId = this.props.uid <= this.props.activeChat ? `${this.props.uid}-${this.props.activeChat}` : `${this.props.activeChat}-${this.props.uid}`
+    const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+    // const groupChatId =  `${this.props.activeChat}-${this.props.uid}`
+
+    console.log('ROOM ID',roomId)
+    db.collection("chatMessages")
+      .doc(groupChatId)
+      .collection(groupChatId)
+      .add({
+        message: {
+          type: 'text',
+          data: `Referror Call Code: ${roomId}`
+        },
+        sentBy: {
+          uid: this.props.uid,
+          name: this.props.name
+        },
+        timestamp: timestamp
+      })
+      .then(() => {
+        this.sendMessage(this.props.activeChat)
+        console.log("Document successfully written!");
+      }).catch(error => console.log("ERROR", error));
+  }
+ 
+
+  joinRoomHandler=()=>{
+    joinRoomById(this.state.callId).then(e=>console.log('SOHAIBSS',e))
+  }
+
+
     render() {
         return (
             <div id="chat-window" className="h-100 position-relative">
@@ -129,6 +195,10 @@ class ChatWindow extends Component {
                         <p className="margin-0 cursor-arrow">{this.state.name}</p>
                     </div>
                     <div className="flex align-items-center">
+                    {!this.props.activeChat ? '' : <>
+          <FontAwesomeIcon icon={faPhone} onClick={()=>this.openMedia()} />
+</>
+}
                         <span className="flex align-items-center "><MaterialIcon icon="search" size='30' />
                             <input type="text" placeholder="Search Message" value={this.state.search} style={{ border: 'none' }} onChange={e => this.setState({ search: e.target.value })} />
                         </span>
@@ -169,6 +239,58 @@ class ChatWindow extends Component {
                 </section>
 
 
+                <Modal
+          show={this.state.show}
+          onHide={this.handleClose}
+          backdrop="static"
+          keyboard={false}
+          size="lg"
+          dialogClassName="modal-90w"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+
+        >
+          <Modal.Header closeButton>
+            {/* <Modal.Title>Modal title</Modal.Title> */}
+          </Modal.Header>
+          <Modal.Body>
+            <Container className="dialModal">
+              <Row>
+                <Col sm={6} md={{ offset: 4 }}>
+                  <Button variant="secondary" onClick={()=>this.createRoomHandler()} className="dialButton" variant="success" size="lg" >
+                    <FontAwesomeIcon icon={faPhone} />
+                  </Button>
+                  {/* </Col> */}
+                  {/* <Col sm={6} md={ 3}> */}
+                  <Button variant="secondary" onClick={() => this.setState({ showCallId: !this.state.showCallId })} className="dialButton" style={{ color: 'white' }} variant="warning" size="lg" >
+                    <FontAwesomeIcon icon={faUserPlus} />
+                  </Button>
+                  {/* </Col> */}
+                  {/* <Col sm={6} md={2}> */}
+                  <Button variant="primary" onClick={this.hangUpHandler} className="dialButton" variant="danger" size="lg">
+                    <FontAwesomeIcon icon={faPhoneSlash} />
+                  </Button>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col sm={6} md={{ offset: 4 }}>
+                  {this.state.showCallId &&
+                    <>
+                      <input type="text" value={this.state.callId} onChange={(e) => this.setState({ callId: e.target.value })} />
+                      <button className="receiveBtn" onClick={() => this.joinRoomHandler()}>Receive</button>
+                    </>
+
+                  }
+
+                  {this.state.notification ? <h3>{this.state.notification}</h3> : ''}
+                
+                </Col>
+              </Row>
+            </Container>
+
+          </Modal.Body>
+        </Modal>
             </div>
         );
     }
@@ -177,7 +299,9 @@ class ChatWindow extends Component {
 const mapStateToProps = state => ({
     uid: state.auth.uid,
     chats: state.chats,
-    thread: state.thread
+    thread: state.thread,
+  name: state.auth.name,
+  activeChat: state.chats.activeChat
 });
 
 export default connect(mapStateToProps, { addChats, removeChats, clearAll })(ChatWindow);
