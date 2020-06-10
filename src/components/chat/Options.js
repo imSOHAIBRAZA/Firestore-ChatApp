@@ -14,7 +14,9 @@ const duration = 300;
 const defaultStyle = {
     transition: `${duration}ms ease-in-out`,
     width: 0,
-    overflowX: 'hidden'
+    overflowX: 'hidden',
+    boxShadow: '0 0.5rem 1rem rgb(15, 15, 15)'
+
 };
 
 const transitionStyles = {
@@ -36,7 +38,7 @@ class Options extends Component {
                     <div style={{
                         ...defaultStyle,
                         ...transitionStyles[state]
-                    }} id="options" className="flex flex-column">
+                    }} id="options" className="flex flex-column optionDrawer" >
 
                         <div className="bg-white  padding-15 margin-bottom-10">
                             <p className="accent-color font-weight-bold">Options</p>
